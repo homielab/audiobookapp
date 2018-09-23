@@ -4,10 +4,10 @@ Audiobook mobile application accomplished with React Native and React ecosystem,
 
 ### Installation
 
-        git clone https://github.com/minhtc/sachnoiapp.git
-        cd sachnoiapp
-        npm install
-        react-native run ios
+    git clone https://github.com/minhtc/sachnoiapp.git
+    cd sachnoiapp
+    npm install
+    react-native run ios
 
 ### Preview
 
@@ -21,7 +21,7 @@ Audiobook mobile application accomplished with React Native and React ecosystem,
 - [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons): React Native module supports using custom icon sets
 - [react-navigation](https://github.com/react-navigation/react-navigation/): React Native module support navigation
 - [react-recontext](https://github.com/minhtc/react-recontext): React state management (made by me)
-- [zget](https://www.npmjs.com/package/zget): tiny and safety function to accessing deeply netsted JS object property
+- [zget](https://www.npmjs.com/package/zget): tiny and safety function to accessing deeply netsted JS object property (made by me)
 
 ### Questions?
 
