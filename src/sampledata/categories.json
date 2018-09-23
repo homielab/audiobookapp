@@ -1,0 +1,50 @@
+[
+  {
+    "key": "van-hoc",
+    "name": "Văn học"
+  },
+  {
+    "key": "thieu-nhi",
+    "name": "Thiếu nhi"
+  },
+  {
+    "name": "Kinh tế",
+    "key": "kinh-te"
+  },
+  {
+    "name": "Nuôi dạy con",
+    "key": "nuoi-day-con"
+  },
+  {
+    "name": "Kỹ năng",
+    "key": "ky-nang"
+  },
+  {
+    "name": "Ngoại ngữ",
+    "key": "ngoai-ngu"
+  },
+  {
+    "name": "Lịch sử",
+    "key": "lich-su"
+  },
+  {
+    "name": "Khoa học",
+    "key": "khoa-hoc"
+  },
+  {
+    "name": "Tôn giáo",
+    "key": "ton-giao-tam-linh"
+  },
+  {
+    "name": "Văn hoá",
+    "key": "van-hoa-du-lich"
+  },
+  {
+    "name": "Nghệ thuật",
+    "key": "nghe-thuat"
+  },
+  {
+    "name": "Người lớn",
+    "key": "truyen-nguoi-lon"
+  }
+]
