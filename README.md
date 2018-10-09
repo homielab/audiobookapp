@@ -29,7 +29,5 @@ minhtcx@gmail.com
 
 ### Screenshots
 
-<img src="https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss1.png" width="300">
-<img src="https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss2.png" width="300">
-<img src="https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss3.png" width="300">
-<img src="https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss4.png" width="300">
+<img src="https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss1.png" width="300"> <img src="https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss2.png" width="300">
+<img src="https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss3.png" width="300"> <img src="https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss4.png" width="300">
