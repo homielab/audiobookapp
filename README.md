@@ -9,17 +9,6 @@ Audiobook mobile application accomplished with React Native and React ecosystem,
     npm install
     react-native run ios
 
-### Preview
-
-<center><a href="http://www.youtube.com/watch?feature=player_embedded&v=GT63VkgRins" target="_blank"><img src="http://img.youtube.com/vi/GT63VkgRins/0.jpg" alt="sachnoi.app react-native demo" width="480" height="360" border="10" /></a></center>
-
-### Screenshots
-
-![Screenshot 1](https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss1.png | width=120)
-![Screenshot 2](https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss2.png | width=120)
-![Screenshot 3](https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss3.png | width=120)
-![Screenshot 4](https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss4.png | width=120)
-
 ### Dependencies
 
 - [react](https://github.com/facebook/react): JS library for building user interfaces
@@ -33,3 +22,14 @@ Audiobook mobile application accomplished with React Native and React ecosystem,
 ### Questions?
 
 minhtcx@gmail.com
+
+### Preview
+
+<center><a href="http://www.youtube.com/watch?feature=player_embedded&v=GT63VkgRins" target="_blank"><img src="http://img.youtube.com/vi/GT63VkgRins/0.jpg" alt="sachnoi.app react-native demo" width="480" height="360" border="10" /></a></center>
+
+### Screenshots
+
+![Screenshot 1](https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss1.png)
+![Screenshot 2](https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss2.png)
+![Screenshot 3](https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss3.png)
+![Screenshot 4](https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss4.png)
