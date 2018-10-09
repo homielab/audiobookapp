@@ -1,6 +1,6 @@
 ## Sachnoi.App
 
-Audiobook mobile application accomplished with React Native and React ecosystem, just a single code base.
+Audiobook mobile application accomplished with React Native and React ecosystem, just a single code base for both android and ios.
 
 ### Installation
 
@@ -12,6 +12,13 @@ Audiobook mobile application accomplished with React Native and React ecosystem,
 ### Preview
 
 <center><a href="http://www.youtube.com/watch?feature=player_embedded&v=GT63VkgRins" target="_blank"><img src="http://img.youtube.com/vi/GT63VkgRins/0.jpg" alt="sachnoi.app react-native demo" width="480" height="360" border="10" /></a></center>
+
+### Screenshots
+
+![Screenshot 1](https://github.com/minhtc/sachnoiapp/tree/master/screenshots/ss1.png)
+![Screenshot 2](https://github.com/minhtc/sachnoiapp/tree/master/screenshots/ss2.png)
+![Screenshot 3](https://github.com/minhtc/sachnoiapp/tree/master/screenshots/ss3.png)
+![Screenshot 4](https://github.com/minhtc/sachnoiapp/tree/master/screenshots/ss4.png)
 
 ### Dependencies
 
