@@ -29,7 +29,7 @@ minhtcx@gmail.com
 
 ### Screenshots
 
-![Screenshot 1](https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss1.png)
-![Screenshot 2](https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss2.png)
-![Screenshot 3](https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss3.png)
-![Screenshot 4](https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss4.png)
+<img src="https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss1.png" width="300">
+<img src="https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss2.png" width="300">
+<img src="https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss3.png" width="300">
+<img src="https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss4.png" width="300">
