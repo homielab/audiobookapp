@@ -3,16 +3,9 @@
  * @flow
  */
 import React, { PureComponent } from "react";
-import {
-  ActivityIndicator,
-  Animated,
-  View,
-  TouchableOpacity,
-  PanResponder,
-  StyleSheet
-} from "react-native";
+import { ActivityIndicator, Animated, View, TouchableOpacity, PanResponder, StyleSheet } from "react-native";
 import Feather from "react-native-vector-icons/Feather";
-import zget from "zget"
+import zget from "zget";
 import { connect } from "../recontext/store";
 import AudioTimeBar from "./AudioTimeBar";
 import PlayerControl from "../helpers/PlayerControl";
@@ -58,10 +51,7 @@ class Player extends PureComponent {
 
     const currentStatus = zget(this.props, "player.status");
     const nextStatus = zget(nextProps, "player.status");
-    if (
-      !currentStatus !== PLAYER_STATUS.PLAYING &&
-      nextStatus === PLAYER_STATUS.PLAYING
-    ) {
+    if (!currentStatus !== PLAYER_STATUS.PLAYING && nextStatus === PLAYER_STATUS.PLAYING) {
       if (this._intervalTimer) {
         clearInterval(this._intervalTimer);
       }
@@ -70,10 +60,7 @@ class Player extends PureComponent {
       if (this._intervalTimer) {
         clearInterval(this._intervalTimer);
       }
-      if (
-        nextStatus !== PLAYER_STATUS.PLAYING &&
-        nextStatus !== PLAYER_STATUS.PAUSE
-      ) {
+      if (nextStatus !== PLAYER_STATUS.PLAYING && nextStatus !== PLAYER_STATUS.PAUSE) {
         this.setState({
           currentTime: 0
         });
@@ -113,7 +100,7 @@ class Player extends PureComponent {
 
   measureView(event) {
     this._playerHeight = event.nativeEvent.layout.height;
-    this._playerY = SCREEN_HEIGHT - TABBAR_HEIGHT - this._playerHeight;
+    this._playerY = SCREEN_HEIGHT - TABBAR_HEIGHT - this._playerHeight - metrics.bottomSpaceHeight;
     this._deltaY.setValue(this._playerY);
   }
 

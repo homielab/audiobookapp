@@ -5,11 +5,12 @@
 import { Dimensions, StatusBar, Platform } from "react-native";
 
 const { height, width } = Dimensions.get("window");
+const isIphoneXGen = Platform.OS === "ios" && (height === 812 || width === 812 || height === 896 || width === 896);
 const statusBarHeight = Platform.select({
-  ios: 24,
+  ios: isIphoneXGen ? 44 : 24,
   android: StatusBar.currentHeight
 });
-const headerHeight = 84 - statusBarHeight;
+const headerHeight = isIphoneXGen ? 130 - statusBarHeight : 84 - statusBarHeight;
 
 const metrics = {
   padding: 15,
@@ -25,7 +26,8 @@ const metrics = {
   headerHeight: headerHeight,
   headerHeightX2: headerHeight * 2,
   headerHeightX3: headerHeight * 3,
-  tabbarHeight: 49
+  tabbarHeight: 49,
+  bottomSpaceHeight: isIphoneXGen ? 34 : 0
 };
 
 const colors = {

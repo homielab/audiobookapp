@@ -48,11 +48,7 @@ class HomeScreen extends PureComponent {
 
     const animatedY = this._contentOffset.interpolate({
       inputRange: [-metrics.screenHeight / 2, 0, metrics.headerHeight],
-      outputRange: [
-        metrics.headerHeight - 10,
-        -metrics.headerHeight,
-        -metrics.headerHeightX2
-      ],
+      outputRange: [metrics.headerHeight - 10, -metrics.headerHeight, -metrics.headerHeightX2],
       extrapolate: "clamp"
     });
 
@@ -145,13 +141,8 @@ class HomeScreen extends PureComponent {
               ) : null}
             </Animated.View>
             <Animated.View style={[styles.headerTitle, fadeInAnimation]}>
-              <Animated.Image
-                source={require("../images/logo-white.png")}
-                style={[styles.logo, titleLeftAnimation]}
-              />
-              <AnimatedHeading style={[styles.textWhite, titleRightAnimation]}>
-                Sachnoi.app
-              </AnimatedHeading>
+              <Animated.Image source={require("../images/logo-white.png")} style={[styles.logo, titleLeftAnimation]} />
+              <AnimatedHeading style={[styles.textWhite, titleRightAnimation]}>Sachnoi.app</AnimatedHeading>
             </Animated.View>
           </View>
         </PrimaryHeader>

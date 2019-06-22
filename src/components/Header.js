@@ -12,14 +12,7 @@ import { metrics, colors } from "../utils/themes";
 
 class Header extends PureComponent {
   render() {
-    const {
-      animatedY,
-      animatedOpacity,
-      title,
-      rightButton,
-      hasBackButton,
-      navigation
-    } = this.props;
+    const { animatedY, animatedOpacity, title, rightButton, hasBackButton, navigation } = this.props;
 
     return (
       <View style={styles.container}>
@@ -34,30 +27,14 @@ class Header extends PureComponent {
         >
           <Title numberOfLines={1}>{title}</Title>
           {rightButton ? (
-            <TouchableOpacity
-              style={styles.rightButton}
-              onPress={() => rightButton.onPress()}
-            >
-              <Feather
-                name={rightButton.iconName}
-                size={26}
-                color={colors.black}
-                style={styles.icon}
-              />
+            <TouchableOpacity style={styles.rightButton} onPress={() => rightButton.onPress()}>
+              <Feather name={rightButton.iconName} size={26} color={colors.black} style={styles.icon} />
             </TouchableOpacity>
           ) : null}
         </Animated.View>
         {hasBackButton ? (
-          <TouchableOpacity
-            style={styles.leftButton}
-            onPress={() => navigation.goBack()}
-          >
-            <Feather
-              name="arrow-left"
-              size={28}
-              color={colors.black}
-              style={styles.icon}
-            />
+          <TouchableOpacity style={styles.leftButton} onPress={() => navigation.goBack()}>
+            <Feather name="arrow-left" size={28} color={colors.black} style={styles.icon} />
           </TouchableOpacity>
         ) : null}
       </View>
