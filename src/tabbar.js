@@ -43,9 +43,7 @@ const HomeTabNavigator = createStackNavigator(
     }
   },
   {
-    navigationOptions: {
-      header: null
-    }
+    headerMode: "none"
   }
 );
 
@@ -73,9 +71,7 @@ const SearchNavigator = createStackNavigator(
     }
   },
   {
-    navigationOptions: {
-      header: null
-    }
+    headerMode: "none"
   }
 );
 
@@ -96,13 +92,9 @@ const TabbarStack = createBottomTabNavigator(
   },
   {
     crossTabsComponent: <Player />,
-    navigationOptions: ({ navigation }) => ({
+    defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, tintColor }) => (
-        <Feather
-          name={MAP_ROUTER_ICON_NAME[navigation.state.routeName]}
-          size={25}
-          color={tintColor}
-        />
+        <Feather name={MAP_ROUTER_ICON_NAME[navigation.state.routeName]} size={25} color={tintColor} />
       )
     }),
     tabBarOptions: {

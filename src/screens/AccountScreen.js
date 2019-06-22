@@ -7,16 +7,15 @@ import { View, StyleSheet } from "react-native";
 import FooterSpace from "../components/FooterSpace";
 import { Text } from "../components/Typos";
 import { metrics, colors } from "../utils/themes";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 class AccountScreen extends PureComponent {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Something cool will be lauched here.</Text>
-        <Text style={styles.welcome}>Check back again soon!</Text>
-        <Text style={styles.welcome}>
-          Theo dõi cập nhật tại: https://sachnoi.app
-        </Text>
+        <Text style={styles.welcome}>Website: sachnoi.app</Text>
+        <Text style={styles.welcome}>Fanpage: facebook.com/sachnoiapp</Text>
         <FooterSpace />
       </View>
     );

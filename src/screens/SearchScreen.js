@@ -31,7 +31,7 @@ class SearchScreen extends PureComponent {
     };
     this._contentOffset = new Animated.Value(-metrics.headerHeight);
     this.onChangeText = this.onChangeText.bind(this);
-    this.renderCateogryItem = this.renderCateogryItem.bind(this);
+    this.renderCategoryItem = this.renderCategoryItem.bind(this);
     this.onTextInputFocus = this.onTextInputFocus.bind(this);
     this.doClearKeywords = this.doClearKeywords.bind(this);
   }
@@ -74,7 +74,7 @@ class SearchScreen extends PureComponent {
     }).start();
   }
 
-  renderCateogryItem({ item }) {
+  renderCategoryItem({ item }) {
     const { navigation } = this.props;
     return (
       <TouchableOpacity
@@ -120,12 +120,7 @@ class SearchScreen extends PureComponent {
         <View style={styles.container}>
           <Animated.View style={[styles.searchResult, switchPageAnimation]}>
             <View style={[styles.page, styles.result]}>
-              <Feather
-                name="search"
-                size={100}
-                color={colors.black}
-                style={styles.icon}
-              />
+              <Feather name="search" size={100} color={colors.black} style={styles.icon} />
               <Title>Tìm cuốn sách yêu thích</Title>
               <Text>Có thể tìm theo tên sách hoặc tên tác giả</Text>
             </View>
@@ -134,7 +129,7 @@ class SearchScreen extends PureComponent {
                 data={categories}
                 numColumns={2}
                 keyExtractor={item => item.key}
-                renderItem={this.renderCateogryItem}
+                renderItem={this.renderCategoryItem}
               />
             </View>
           </Animated.View>
@@ -146,17 +141,10 @@ class SearchScreen extends PureComponent {
             })}
           >
             <View style={styles.headerText}>
-              <AnimatedTitle style={[styles.textWhite, fadeOutAnimation]}>
-                Tìm sách
-              </AnimatedTitle>
+              <AnimatedTitle style={[styles.textWhite, fadeOutAnimation]}>Tìm sách</AnimatedTitle>
               <View style={styles.searchContainer}>
                 <View style={styles.search}>
-                  <Feather
-                    name="search"
-                    size={20}
-                    color={colors.textSecondary}
-                    style={styles.icon}
-                  />
+                  <Feather name="search" size={20} color={colors.textSecondary} style={styles.icon} />
                   <TextInput
                     autoCorrect={false}
                     placeholder="Nhập tên muốn tìm"
@@ -167,10 +155,7 @@ class SearchScreen extends PureComponent {
                   />
                 </View>
                 {isFocused ? (
-                  <TouchableOpacity
-                    onPress={this.doClearKeywords}
-                    style={styles.buttonClear}
-                  >
+                  <TouchableOpacity onPress={this.doClearKeywords} style={styles.buttonClear}>
                     <Subtitle style={styles.textWhite}>Hủy</Subtitle>
                   </TouchableOpacity>
                 ) : null}
