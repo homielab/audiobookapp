@@ -4,10 +4,10 @@ Audiobook mobile application accomplished with React Native and React ecosystem,
 
 ### Installation
 
-    git clone https://github.com/minhtc/sachnoiapp.git
-    cd sachnoiapp
+    git clone git@github.com:minhtc/audiobookapp.git
+    cd audiobookapp
     npm install
-    react-native run ios
+    npx react-native run ios
 
 ### Dependencies
 
@@ -21,7 +21,7 @@ Audiobook mobile application accomplished with React Native and React ecosystem,
 
 ### Questions?
 
-minhtcx@gmail.com
+Feel free to create new issue: https://github.com/minhtc/audiobookapp/issues
 
 ### Preview
 
@@ -29,5 +29,5 @@ minhtcx@gmail.com
 
 ### Screenshots
 
-<img src="https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss1.png" width="300"> <img src="https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss2.png" width="300">
-<img src="https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss3.png" width="300"> <img src="https://raw.githubusercontent.com/minhtc/sachnoiapp/master/screenshots/ss4.png" width="300">
+<img src="https://raw.githubusercontent.com/minhtc/audiobookapp/master/screenshots/ss1.png" width="300"> <img src="https://raw.githubusercontent.com/minhtc/audiobookapp/master/screenshots/ss2.png" width="300">
+<img src="https://raw.githubusercontent.com/minhtc/audiobookapp/master/screenshots/ss3.png" width="300"> <img src="https://raw.githubusercontent.com/minhtc/audiobookapp/master/screenshots/ss4.png" width="300">
