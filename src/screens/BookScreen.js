@@ -87,7 +87,7 @@ class BookScreen extends PureComponent {
             <Text>{item.authors.join(' ,')}</Text>
             <Category data={item.categories} />
             <View style={styles.line} />
-            <Text>Giọng Đọc: {item.readers.join(' ,')}</Text>
+            <Text>Narrator: {item.readers.join(' ,')}</Text>
             <StarRating rating={item.rating} />
             <ButtonPlay isPlaying={isPlaying} onPress={() => this.play(0)} />
           </View>
@@ -109,21 +109,21 @@ class BookScreen extends PureComponent {
                 </TouchableOpacity>
               ))}
           </ScrollView>
-          <SectionHeader title="Giới thiệu" />
+          <SectionHeader title="Summary" />
           {collapsed ? (
             <View>
               <Text numberOfLines={3}>{item.description}</Text>
               <TextButton
                 style={{fontSize: 14}}
                 onPress={() => this.setState({collapsed: false})}>
-                Đọc tiếp
+                Read more
               </TextButton>
             </View>
           ) : (
             <Text>{item.description}</Text>
           )}
           <SectionHeader
-            title="Cảm nhận"
+            title="Reviews"
             right={
               <TextButton
                 onPress={() =>
@@ -131,16 +131,16 @@ class BookScreen extends PureComponent {
                     reviews: item.reviews,
                   })
                 }>
-                Xem tất cả
+                View all
               </TextButton>
             }
           />
           <Reviews reviews={item.reviews} />
           <ButtonNewReview />
-          <SectionHeader title="Mua sách" />
-          <SubText>Mua sách giấy ủng hộ tác giả</SubText>
-          <SectionHeader title="Mượn sách" />
-          <SubText>Cùng chia sẻ để nhận lại nhiều hơn</SubText>
+          <SectionHeader title="Where to buy?" />
+          <SubText>...</SubText>
+          <SectionHeader title="Where to borrow" />
+          <SubText>...</SubText>
           <FooterSpace />
         </Animated.ScrollView>
         <Header

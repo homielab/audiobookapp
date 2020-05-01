@@ -40,34 +40,34 @@ export default [
     rating: 3.8,
     tracks: [
       {
-        title: 'Nhà giả kim - Vào truyện',
+        title: 'The Alchemist - Introduction',
         link:
-          'http://data.sachnoionline.net/Nha_gia_kim/1_Nha_gia_kim___Vao_truyen.mp3',
+          'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
       },
       {
-        title: 'Nhà giả kim - Phần 1',
+        title: 'The Alchemist - Chapter 1',
         link:
-          'http://data.sachnoionline.net/Nha_gia_kim/2_Nha_gia_kim___Phan_1.mp3',
+          'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
       },
       {
-        title: 'Nhà giả kim - Phần 2',
+        title: 'The Alchemist - Chapter 2',
         link:
-          'http://data.sachnoionline.net/Nha_gia_kim/3_Nha_gia_kim___Phan_2.mp3',
+          'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
       },
       {
-        title: 'Nhà giả kim - Phần 3',
+        title: 'The Alchemist - Chapter 3',
         link:
-          'http://data.sachnoionline.net/Nha_gia_kim/4_Nha_gia_kim___Phan_3.mp3',
+          'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
       },
       {
-        title: 'Nhà giả kim - Phần 4',
+        title: 'The Alchemist - Chapter 4',
         link:
-          'http://data.sachnoionline.net/Nha_gia_kim/5_Nha_gia_kim___Phan_4.mp3',
+          'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
       },
       {
-        title: 'Nhà giả kim - Phần 5',
+        title: 'The Alchemist - Chapter 5',
         link:
-          'http://data.sachnoionline.net/Nha_gia_kim/6_Nha_gia_kim___Phan_5.mp3',
+          'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
       },
     ],
   },
@@ -119,32 +119,32 @@ Learn the six ways to make people like you, the twelve ways to win people to you
       {
         title: '01. Phần 00',
         link:
-          'http://sno.sachnoionline.net/media/snoo/file/kham_pha_cuoc_song/dac_nhan_tam/DacNhanTamNewNew00.mp3',
+          'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
       },
       {
         title: '02. Phần 01',
         link:
-          'http://sno.sachnoionline.net/media/snoo/file/kham_pha_cuoc_song/dac_nhan_tam/DacNhanTamNewNew01.mp3',
+          'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
       },
       {
         title: '03. Phần 02',
         link:
-          'http://sno.sachnoionline.net/media/snoo/file/kham_pha_cuoc_song/dac_nhan_tam/DacNhanTamNewNew02.mp3',
+          'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
       },
       {
         title: '04. Phần 03',
         link:
-          'http://sno.sachnoionline.net/media/snoo/file/kham_pha_cuoc_song/dac_nhan_tam/DacNhanTamNewNew03.mp3',
+          'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
       },
       {
         title: '05. Phần 04',
         link:
-          'http://sno.sachnoionline.net/media/snoo/file/kham_pha_cuoc_song/dac_nhan_tam/DacNhanTamNewNew04.mp3',
+          'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
       },
       {
         title: '06. Phần 05',
         link:
-          'http://sno.sachnoionline.net/media/snoo/file/kham_pha_cuoc_song/dac_nhan_tam/DacNhanTamNewNew05.mp3',
+          'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
       },
     ],
   },

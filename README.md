@@ -1,4 +1,4 @@
-## Sachnoi.App
+## Audiobook App Open Source
 
 Audiobook mobile application accomplished with React Native and React ecosystem, just a single code base for both android and ios.
 
@@ -25,9 +25,9 @@ Feel free to create new issue: https://github.com/minhtc/audiobookapp/issues
 
 ### Preview
 
-<center><a href="http://www.youtube.com/watch?feature=player_embedded&v=GT63VkgRins" target="_blank"><img src="http://img.youtube.com/vi/GT63VkgRins/0.jpg" alt="sachnoi.app react-native demo" width="480" height="360" border="10" /></a></center>
+<center><a href="http://www.youtube.com/watch?feature=player_embedded&v=GT63VkgRins" target="_blank"><img src="http://img.youtube.com/vi/GT63VkgRins/0.jpg" alt="audiobook app react-native demo" width="480" height="360" border="10" /></a></center>
 
 ### Screenshots
 
-<img src="https://raw.githubusercontent.com/minhtc/audiobookapp/master/screenshots/ss1.png" width="300"> <img src="https://raw.githubusercontent.com/minhtc/audiobookapp/master/screenshots/ss2.png" width="300">
-<img src="https://raw.githubusercontent.com/minhtc/audiobookapp/master/screenshots/ss3.png" width="300"> <img src="https://raw.githubusercontent.com/minhtc/audiobookapp/master/screenshots/ss4.png" width="300">
+<img src="https://raw.githubusercontent.com/minhtc/audiobookapp/master/screenshots/1.png" width="300"> <img src="https://raw.githubusercontent.com/minhtc/audiobookapp/master/screenshots/2.png" width="300">
+<img src="https://raw.githubusercontent.com/minhtc/audiobookapp/master/screenshots/3.png" width="300"> <img src="https://raw.githubusercontent.com/minhtc/audiobookapp/master/screenshots/4.png" width="300"> <img src="https://raw.githubusercontent.com/minhtc/audiobookapp/master/screenshots/5.png" width="300"> <img src="https://raw.githubusercontent.com/minhtc/audiobookapp/master/screenshots/6.png" width="300"> <img src="https://raw.githubusercontent.com/minhtc/audiobookapp/master/screenshots/7.png" width="300">

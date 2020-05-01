@@ -47,7 +47,7 @@ class CategoryScreen extends PureComponent {
           contentContainerStyle={styles.list}
           ListHeaderComponent={
             <View style={styles.title}>
-              <Heading>{'Chuyên mục: ' + this._title}</Heading>
+              <Heading>{'Genres: ' + this._title}</Heading>
             </View>
           }
           ListFooterComponent={<FooterSpace />}

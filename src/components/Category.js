@@ -11,7 +11,9 @@ import {colors, metrics} from '../utils/themes';
 class CategoryTags extends PureComponent {
   render() {
     const {data} = this.props;
-    if (!data || data.length === 0) return <View />;
+    if (!data || data.length === 0) {
+      return <View />;
+    }
     return (
       <View style={styles.container}>
         {data.map((item, index) => (

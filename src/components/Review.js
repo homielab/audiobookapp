@@ -11,7 +11,8 @@ import {colors, metrics} from '../utils/themes';
 
 class Review extends PureComponent {
   render() {
-    const {width, height} = this.props;
+    const {width, height, item} = this.props;
+
     return (
       <View
         style={[
@@ -21,16 +22,12 @@ class Review extends PureComponent {
           },
           height && {height: height},
         ]}>
-        <Subtitle>Hài Lòng</Subtitle>
+        <Subtitle>{item.title}</Subtitle>
         <StarRating mini rating={3.4} />
-        <Text>
-          Cuốn này khá hay, câu chuyện lôi cuốn. kết thúc hơi cụt. Tôi hơi thất
-          vọng về đoạn kết. tôi cứ hy vọng chàng trai sẽ có đoạn kết hạnh phúc
-          bên 1 gia đình, bên người vợ là cô con gái ông mua lông cừu.
-        </Text>
+        <Text>{item.content}</Text>
         <View style={styles.author}>
-          <SubText>Jun 28</SubText>
-          <SubText>wong 20</SubText>
+          <SubText>{item.date}</SubText>
+          <SubText>{item.user}</SubText>
         </View>
       </View>
     );

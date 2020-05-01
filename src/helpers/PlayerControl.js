@@ -16,7 +16,9 @@ const PlayerControl = {
 
   load(book, trackIndex = 0) {
     const track = zget(book, ['tracks', trackIndex]);
-    if (!book || !track || !track.link) return;
+    if (!book || !track || !track.link) {
+      return;
+    }
 
     if (this.soundPointer) {
       if (this.soundPointer._filename === track.link) {
@@ -40,21 +42,29 @@ const PlayerControl = {
 
   getCurrentTime() {
     return new Promise(resolve => {
-      if (!this.soundPointer) resolve(0);
-      this.soundPointer.getCurrentTime(seconds => resolve(parseInt(seconds)));
+      if (!this.soundPointer) {
+        resolve(0);
+      }
+      this.soundPointer.getCurrentTime(seconds =>
+        resolve(parseInt(seconds, 10)),
+      );
     });
   },
 
   playAudio() {
-    if (!this.soundPointer) return;
+    if (!this.soundPointer) {
+      return;
+    }
     dispatch('PLAY_AUDIO', {
-      duration: parseInt(this.soundPointer.getDuration()),
+      duration: parseInt(this.soundPointer.getDuration(), 10),
     });
     this.soundPointer.play(this.onPlayEnd.bind(this));
   },
 
   pauseAudio() {
-    if (!this.soundPointer) return;
+    if (!this.soundPointer) {
+      return;
+    }
     dispatch('PAUSE_AUDIO');
     this.soundPointer.pause();
   },
@@ -79,7 +89,9 @@ const PlayerControl = {
   },
 
   togglePlay() {
-    if (!this.soundPointer) return;
+    if (!this.soundPointer) {
+      return;
+    }
     if (this.soundPointer._playing) {
       this.pauseAudio();
     } else {
@@ -88,7 +100,9 @@ const PlayerControl = {
   },
 
   stop() {
-    if (!this.soundPointer) return;
+    if (!this.soundPointer) {
+      return;
+    }
     this.soundPointer.stop();
   },
 

@@ -12,18 +12,19 @@ import {Text} from './Typos';
 class ButtonPlay extends PureComponent {
   render() {
     const {onPress, isPlaying} = this.props;
-    if (isPlaying)
+    if (isPlaying) {
       return (
         <TouchableOpacity style={styles.button} onPress={onPress}>
           <Feather name="pause" size={20} color={colors.white} />
-          <Text style={styles.buttonText}>Dừng</Text>
+          <Text style={styles.buttonText}>Pause</Text>
         </TouchableOpacity>
       );
+    }
 
     return (
       <TouchableOpacity style={styles.button} onPress={onPress}>
         <Feather name="headphones" size={20} color={colors.white} />
-        <Text style={styles.buttonText}>Nghe</Text>
+        <Text style={styles.buttonText}>Play</Text>
       </TouchableOpacity>
     );
   }

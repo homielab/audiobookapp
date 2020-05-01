@@ -20,18 +20,18 @@ class NewReviewScreen extends PureComponent {
       <View style={styles.container}>
         <View style={styles.center}>
           <StarRating rating={0} />
-          <SubText style={styles.welcome}>Chọn số sao tương tứng</SubText>
+          <SubText style={styles.welcome}>Select rating star</SubText>
         </View>
         <TextInput
           style={styles.input}
           autoCorrect={false}
-          placeholder="Tiêu đề"
+          placeholder="Title"
         />
         <TextInput
           multiline
           style={[styles.input, styles.multiline]}
           autoCorrect={false}
-          placeholder="Nội dung (tuỳ chọn)"
+          placeholder="Content"
         />
         <Header
           hasBackButton
@@ -45,7 +45,7 @@ class NewReviewScreen extends PureComponent {
             outputRange: [60, 0],
             extrapolate: 'clamp',
           })}
-          title="Viết cảm nhận"
+          title="Write review"
           rightButton={{
             onPress: () => null,
             iconName: 'send',

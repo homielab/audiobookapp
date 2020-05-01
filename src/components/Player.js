@@ -82,7 +82,9 @@ class Player extends PureComponent {
   }
 
   onPanResponderMove(event, gestureState) {
-    if (gestureState.dx > 0) this._deltaX.setValue(gestureState.dx);
+    if (gestureState.dx > 0) {
+      this._deltaX.setValue(gestureState.dx);
+    }
   }
 
   onPanResponderRelease(event, gestureState) {
@@ -132,7 +134,7 @@ class Player extends PureComponent {
   showFullPlayer() {}
 
   renderPlayButtonComponent(status) {
-    if (status === PLAYER_STATUS.PLAYING)
+    if (status === PLAYER_STATUS.PLAYING) {
       return (
         <View style={styles.row}>
           <TouchableOpacity style={styles.button} onPress={this.togglePlay}>
@@ -140,7 +142,7 @@ class Player extends PureComponent {
           </TouchableOpacity>
         </View>
       );
-    else
+    } else {
       return (
         <View style={styles.row}>
           <TouchableOpacity style={styles.button} onPress={this.togglePlay}>
@@ -148,6 +150,7 @@ class Player extends PureComponent {
           </TouchableOpacity>
         </View>
       );
+    }
   }
 
   renderLoading() {

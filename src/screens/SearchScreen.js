@@ -60,6 +60,7 @@ class SearchScreen extends PureComponent {
     });
     Animated.spring(this._contentOffset, {
       toValue: -metrics.headerHeightX2,
+      useNativeDriver: true,
     }).start();
   }
 
@@ -71,6 +72,7 @@ class SearchScreen extends PureComponent {
     Keyboard.dismiss();
     Animated.spring(this._contentOffset, {
       toValue: -metrics.headerHeight,
+      useNativeDriver: true,
     }).start();
   }
 
@@ -92,7 +94,7 @@ class SearchScreen extends PureComponent {
   }
 
   render() {
-    const {categories, search_books} = this.props;
+    const {categories} = this.props;
     const {keyword, isFocused} = this.state;
     const fadeOutAnimation = {
       opacity: this._contentOffset.interpolate({
@@ -125,8 +127,8 @@ class SearchScreen extends PureComponent {
                 color={colors.black}
                 style={styles.icon}
               />
-              <Title>Tìm cuốn sách yêu thích</Title>
-              <Text>Có thể tìm theo tên sách hoặc tên tác giả</Text>
+              <Title>Search for your favourite book</Title>
+              <Text>You can search by book's title or author's name</Text>
             </View>
             <View style={[styles.page, styles.categories]}>
               <AnimatedFlatList
@@ -145,7 +147,7 @@ class SearchScreen extends PureComponent {
             })}>
             <View style={styles.headerText}>
               <AnimatedTitle style={[styles.textWhite, fadeOutAnimation]}>
-                Tìm sách
+                Search
               </AnimatedTitle>
               <View style={styles.searchContainer}>
                 <View style={styles.search}>
@@ -157,7 +159,7 @@ class SearchScreen extends PureComponent {
                   />
                   <TextInput
                     autoCorrect={false}
-                    placeholder="Nhập tên muốn tìm"
+                    placeholder="What are you looking for?"
                     value={keyword}
                     onChangeText={this.onChangeText}
                     onFocus={this.onTextInputFocus}
@@ -168,7 +170,7 @@ class SearchScreen extends PureComponent {
                   <TouchableOpacity
                     onPress={this.doClearKeywords}
                     style={styles.buttonClear}>
-                    <Subtitle style={styles.textWhite}>Hủy</Subtitle>
+                    <Subtitle style={styles.textWhite}>Cancel</Subtitle>
                   </TouchableOpacity>
                 ) : null}
               </View>

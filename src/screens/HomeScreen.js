@@ -15,7 +15,11 @@ import Api from '../helpers/Api';
 const pickRandomProperty = obj => {
   var result;
   var count = 0;
-  for (var prop in obj) if (Math.random() < 1 / ++count) result = prop;
+  for (var prop in obj) {
+    if (Math.random() < 1 / ++count) {
+      result = prop;
+    }
+  }
   return result;
 };
 
@@ -150,7 +154,7 @@ class HomeScreen extends PureComponent {
                 style={[styles.logo, titleLeftAnimation]}
               />
               <AnimatedHeading style={[styles.textWhite, titleRightAnimation]}>
-                Sachnoi.app
+                Audiobook.xyz
               </AnimatedHeading>
             </Animated.View>
           </View>

@@ -34,7 +34,7 @@ class CardBook extends PureComponent {
   }
 
   render() {
-    const {item, onPress, index} = this.props;
+    const {item, onPress} = this.props;
     return (
       <TouchableOpacity
         style={styles.container}
@@ -61,7 +61,7 @@ class CardBook extends PureComponent {
             <Text>{item.authors.join(' ,')}</Text>
             <Category data={item.categories} />
             <View style={styles.line} />
-            <Caption>Giọng Đọc: {item.readers.join(' ,')}</Caption>
+            <Caption>Narrator: {item.readers.join(' ,')}</Caption>
           </View>
           <BookCover imageSource={item.image} />
         </Animated.View>

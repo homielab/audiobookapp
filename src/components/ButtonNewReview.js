@@ -22,7 +22,7 @@ class ButtonNewReview extends PureComponent {
           color={colors.primary}
           style={styles.icon}
         />
-        <Text style={styles.text}>Viết cảm nhận mới</Text>
+        <Text style={styles.text}>Write your review</Text>
       </TouchableOpacity>
     );
   }
