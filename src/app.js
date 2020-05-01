@@ -3,19 +3,18 @@
  * @flow
  */
 
-import React from "react";
-import { StatusBar, Platform } from "react-native";
-import { createAppContainer } from "react-navigation";
-import { colors } from "./utils/themes";
-import TabbarStack from "./tabbar";
-import ActionScreen from "./screens/ActionScreen";
-import { Provider } from "./recontext/store";
+import React from 'react';
+import {StatusBar, Platform} from 'react-native';
+import {createAppContainer} from 'react-navigation';
+import {colors} from './utils/themes';
+import TabbarStack from './tabbar';
+import {Provider} from './recontext/store';
 
-if (Platform.OS === "android") {
+if (Platform.OS === 'android') {
   StatusBar.setTranslucent(true);
   StatusBar.setBackgroundColor(colors.transparent);
 } else {
-  StatusBar.setBarStyle("light-content");
+  StatusBar.setBarStyle('light-content');
 }
 
 const AppNavigator = createAppContainer(TabbarStack);
