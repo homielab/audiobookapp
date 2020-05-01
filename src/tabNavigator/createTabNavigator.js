@@ -1,27 +1,27 @@
-import * as React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { createTabNavigator } from "react-navigation-tabs";
-import BottomTabBar from "./BottomTabBar";
-import ResourceSavingScene from "./ResourceSavingScene";
+import * as React from 'react';
+import {View, StyleSheet} from 'react-native';
+import {createTabNavigator} from 'react-navigation-tabs';
+import BottomTabBar from './BottomTabBar';
+import ResourceSavingScene from './ResourceSavingScene';
 
 class TabNavigationView extends React.PureComponent {
   static defaultProps = {
-    lazy: true
+    lazy: true,
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { index } = nextProps.navigation.state;
+    const {index} = nextProps.navigation.state;
 
     return {
       // Set the current tab to be loaded if it was not loaded before
       loaded: prevState.loaded.includes(index)
         ? prevState.loaded
-        : [...prevState.loaded, index]
+        : [...prevState.loaded, index],
     };
   }
 
   state = {
-    loaded: [this.props.navigation.state.index]
+    loaded: [this.props.navigation.state.index],
   };
 
   _renderTabBar = () => {
@@ -35,11 +35,11 @@ class TabNavigationView extends React.PureComponent {
       getButtonComponent,
       getTestID,
       renderIcon,
-      onTabPress
+      onTabPress,
     } = this.props;
 
-    const { descriptors } = this.props;
-    const { state } = this.props.navigation;
+    const {descriptors} = this.props;
+    const {state} = this.props.navigation;
     const route = state.routes[state.index];
     const descriptor = descriptors[route.key];
     const options = descriptor.options;
@@ -65,7 +65,7 @@ class TabNavigationView extends React.PureComponent {
   };
 
   _jumpTo = key => {
-    const { navigation, onIndexChange } = this.props;
+    const {navigation, onIndexChange} = this.props;
 
     const index = navigation.state.routes.findIndex(route => route.key === key);
 
@@ -73,9 +73,9 @@ class TabNavigationView extends React.PureComponent {
   };
 
   render() {
-    const { navigation, renderScene, lazy } = this.props;
-    const { routes } = navigation.state;
-    const { loaded } = this.state;
+    const {navigation, renderScene, lazy} = this.props;
+    const {routes} = navigation.state;
+    const {loaded} = this.state;
 
     return (
       <View style={styles.container}>
@@ -91,13 +91,9 @@ class TabNavigationView extends React.PureComponent {
             return (
               <ResourceSavingScene
                 key={route.key}
-                style={[
-                  StyleSheet.absoluteFill,
-                  { opacity: isFocused ? 1 : 0 }
-                ]}
-                isVisible={isFocused}
-              >
-                {renderScene({ route })}
+                style={[StyleSheet.absoluteFill, {opacity: isFocused ? 1 : 0}]}
+                isVisible={isFocused}>
+                {renderScene({route})}
               </ResourceSavingScene>
             );
           })}
@@ -112,11 +108,11 @@ class TabNavigationView extends React.PureComponent {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    overflow: "hidden"
+    overflow: 'hidden',
   },
   pages: {
-    flex: 1
-  }
+    flex: 1,
+  },
 });
 
 export default createTabNavigator(TabNavigationView);

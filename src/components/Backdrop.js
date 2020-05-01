@@ -2,10 +2,10 @@
  * @format
  * @flow
  */
-import React, { PureComponent } from "react";
-import { TouchableWithoutFeedback, StyleSheet } from "react-native";
-import PropTypes from "prop-types";
-import { metrics, colors } from "../utils/themes";
+import React, {PureComponent} from 'react';
+import {TouchableWithoutFeedback, StyleSheet, View} from 'react-native';
+import PropTypes from 'prop-types';
+import {metrics, colors} from '../utils/themes';
 
 class Backdrop extends PureComponent {
   constructor(props) {
@@ -13,8 +13,8 @@ class Backdrop extends PureComponent {
     this.dismis = this.dismis.bind(this);
   }
   componentWillReceiveProps(nextProps) {
-    const { visible } = this.props;
-    const { visible: nextVisible } = nextProps;
+    const {visible} = this.props;
+    const {visible: nextVisible} = nextProps;
     if (visible === true && nextVisible === false) {
       this.dismis();
     }
@@ -23,15 +23,15 @@ class Backdrop extends PureComponent {
   dismis() {
     const fadeOut = {
       from: {
-        opacity: 0.5
+        opacity: 0.5,
       },
       to: {
-        opacity: 0
-      }
+        opacity: 0,
+      },
     };
 
     this.viewRef.animate(fadeOut, 300).then(() => {
-      const { onPress } = this.props;
+      const {onPress} = this.props;
       if (onPress) onPress();
     });
   }
@@ -39,11 +39,11 @@ class Backdrop extends PureComponent {
   render() {
     const fadeIn = {
       from: {
-        opacity: 0
+        opacity: 0,
       },
       to: {
-        opacity: 0.5
-      }
+        opacity: 0.5,
+      },
     };
 
     return (
@@ -56,7 +56,7 @@ class Backdrop extends PureComponent {
 
 Backdrop.propTypes = {
   visible: PropTypes.bool.isRequired,
-  onPress: PropTypes.func.isRequired
+  onPress: PropTypes.func.isRequired,
 };
 
 export default Backdrop;
@@ -64,7 +64,7 @@ export default Backdrop;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    position: "absolute",
+    position: 'absolute',
     top: 0,
     left: 0,
     bottom: 0,
@@ -72,6 +72,6 @@ const styles = StyleSheet.create({
     width: metrics.screenWidth,
     height: metrics.screenHeight,
     backgroundColor: colors.black,
-    opacity: 0.5
-  }
+    opacity: 0.5,
+  },
 });

@@ -3,5 +3,5 @@ export default {
   PLAYING: 1,
   PAUSE: 2,
   STOP: 3,
-  ERROR: 4
+  ERROR: 4,
 };

@@ -3,9 +3,9 @@
  * @format
  * @flow
  */
-import React, { PureComponent } from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { colors } from "../utils/themes";
+import React, {PureComponent} from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+import {colors} from '../utils/themes';
 
 class TemplateScreen extends PureComponent {
   render() {
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
-    justifyContent: "center",
-    alignItems: "center"
-  }
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });

@@ -2,12 +2,12 @@
  * @format
  * @flow
  */
-import Sound from "react-native-sound";
-import zget from "zget";
-import { dispatch } from "../recontext/store";
+import Sound from 'react-native-sound';
+import zget from 'zget';
+import {dispatch} from '../recontext/store';
 
 Sound.setActive(true);
-Sound.setCategory("Playback", true);
+Sound.setCategory('Playback', true);
 
 const PlayerControl = {
   book: null,
@@ -15,7 +15,7 @@ const PlayerControl = {
   soundPointer: null,
 
   load(book, trackIndex = 0) {
-    const track = zget(book, ["tracks", trackIndex]);
+    const track = zget(book, ['tracks', trackIndex]);
     if (!book || !track || !track.link) return;
 
     if (this.soundPointer) {
@@ -31,11 +31,11 @@ const PlayerControl = {
     this.book = book;
     this.track = track;
 
-    dispatch("LOAD_AUDIO", {
+    dispatch('LOAD_AUDIO', {
       book,
-      track
+      track,
     });
-    this.soundPointer = new Sound(track.link, "", this.onLoadAudio.bind(this));
+    this.soundPointer = new Sound(track.link, '', this.onLoadAudio.bind(this));
   },
 
   getCurrentTime() {
@@ -47,23 +47,23 @@ const PlayerControl = {
 
   playAudio() {
     if (!this.soundPointer) return;
-    dispatch("PLAY_AUDIO", {
-      duration: parseInt(this.soundPointer.getDuration())
+    dispatch('PLAY_AUDIO', {
+      duration: parseInt(this.soundPointer.getDuration()),
     });
     this.soundPointer.play(this.onPlayEnd.bind(this));
   },
 
   pauseAudio() {
     if (!this.soundPointer) return;
-    dispatch("PAUSE_AUDIO");
+    dispatch('PAUSE_AUDIO');
     this.soundPointer.pause();
   },
 
   onPlayEnd(success) {
     if (success) {
-      dispatch("PLAY_AUDIO_ENDED");
+      dispatch('PLAY_AUDIO_ENDED');
       const nextTrackIndex = this.track.index + 1;
-      const nextTrack = zget(this.book, ["tracks", nextTrackIndex]);
+      const nextTrack = zget(this.book, ['tracks', nextTrackIndex]);
       if (nextTrack && nextTrack.link) {
         this.load(this.book, nextTrackIndex);
       }
@@ -72,7 +72,7 @@ const PlayerControl = {
 
   onLoadAudio(error) {
     if (error) {
-      dispatch("LOAD_AUDIO_ERROR");
+      dispatch('LOAD_AUDIO_ERROR');
       return;
     }
     this.playAudio();
@@ -93,14 +93,14 @@ const PlayerControl = {
   },
 
   unloadAudio() {
-    dispatch("UNLOAD_AUDIO");
+    dispatch('UNLOAD_AUDIO');
     if (this.soundPointer) {
       this.soundPointer.stop();
       this.soundPointer.release();
       this.soundPointer.reset();
       this.soundPointer = null;
     }
-  }
+  },
 };
 
 export default PlayerControl;

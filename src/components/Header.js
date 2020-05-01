@@ -2,17 +2,24 @@
  * @format
  * @flow
  */
-import React, { PureComponent } from "react";
-import { Animated, View, TouchableOpacity, StyleSheet } from "react-native";
-import PropTypes from "prop-types";
-import { withNavigation } from "react-navigation";
-import Feather from "react-native-vector-icons/Feather";
-import { Title } from "./Typos";
-import { metrics, colors } from "../utils/themes";
+import React, {PureComponent} from 'react';
+import {Animated, View, TouchableOpacity, StyleSheet} from 'react-native';
+import PropTypes from 'prop-types';
+import {withNavigation} from 'react-navigation';
+import Feather from 'react-native-vector-icons/Feather';
+import {Title} from './Typos';
+import {metrics, colors} from '../utils/themes';
 
 class Header extends PureComponent {
   render() {
-    const { animatedY, animatedOpacity, title, rightButton, hasBackButton, navigation } = this.props;
+    const {
+      animatedY,
+      animatedOpacity,
+      title,
+      rightButton,
+      hasBackButton,
+      navigation,
+    } = this.props;
 
     return (
       <View style={styles.container}>
@@ -20,21 +27,34 @@ class Header extends PureComponent {
           style={[
             styles.center,
             {
-              transform: [{ translateY: animatedY || 0 }],
-              opacity: animatedOpacity || 1
-            }
-          ]}
-        >
+              transform: [{translateY: animatedY || 0}],
+              opacity: animatedOpacity || 1,
+            },
+          ]}>
           <Title numberOfLines={1}>{title}</Title>
           {rightButton ? (
-            <TouchableOpacity style={styles.rightButton} onPress={() => rightButton.onPress()}>
-              <Feather name={rightButton.iconName} size={26} color={colors.black} style={styles.icon} />
+            <TouchableOpacity
+              style={styles.rightButton}
+              onPress={() => rightButton.onPress()}>
+              <Feather
+                name={rightButton.iconName}
+                size={26}
+                color={colors.black}
+                style={styles.icon}
+              />
             </TouchableOpacity>
           ) : null}
         </Animated.View>
         {hasBackButton ? (
-          <TouchableOpacity style={styles.leftButton} onPress={() => navigation.goBack()}>
-            <Feather name="arrow-left" size={28} color={colors.black} style={styles.icon} />
+          <TouchableOpacity
+            style={styles.leftButton}
+            onPress={() => navigation.goBack()}>
+            <Feather
+              name="arrow-left"
+              size={28}
+              color={colors.black}
+              style={styles.icon}
+            />
           </TouchableOpacity>
         ) : null}
       </View>
@@ -48,21 +68,21 @@ Header.propTypes = {
   title: PropTypes.string.isRequired,
   rightButton: PropTypes.shape({
     onPress: PropTypes.func.isRequired,
-    iconName: PropTypes.string.isRequired
+    iconName: PropTypes.string.isRequired,
   }),
-  hasBackButton: PropTypes.bool
+  hasBackButton: PropTypes.bool,
 };
 
 Header.defaultProps = {
   rightButton: null,
-  hasBackButton: true
+  hasBackButton: true,
 };
 
 export default withNavigation(Header);
 
 const styles = StyleSheet.create({
   container: {
-    position: "absolute",
+    position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
@@ -70,35 +90,35 @@ const styles = StyleSheet.create({
     height: metrics.headerHeight,
     backgroundColor: colors.white,
     paddingTop: metrics.statusBarHeight,
-    flexDirection: "row",
-    alignItems: "center",
-    overflow: "hidden"
+    flexDirection: 'row',
+    alignItems: 'center',
+    overflow: 'hidden',
   },
   leftButton: {
     paddingHorizontal: metrics.lessPadding,
     paddingBottom: metrics.lessPadding,
-    position: "absolute",
+    position: 'absolute',
     left: 0,
-    top: metrics.statusBarHeight
+    top: metrics.statusBarHeight,
   },
   rightButton: {
     paddingHorizontal: metrics.lessPadding,
     paddingBottom: metrics.lessPadding,
-    position: "absolute",
+    position: 'absolute',
     right: 0,
-    top: metrics.statusBarHeight
+    top: metrics.statusBarHeight,
   },
   center: {
-    position: "absolute",
+    position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     width: metrics.screenWidth,
     height: metrics.headerHeight,
     paddingTop: metrics.statusBarHeight,
     flex: 1,
-    paddingHorizontal: 40
-  }
+    paddingHorizontal: 40,
+  },
 });

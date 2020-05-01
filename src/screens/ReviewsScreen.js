@@ -2,16 +2,16 @@
  * @format
  * @flow
  */
-import React, { PureComponent } from "react";
-import { Animated, FlatList, View, StatusBar, StyleSheet } from "react-native";
-import zget from "zget"
-import Header from "../components/Header";
-import Review from "../components/Review";
-import StarRating from "../components/StarRating";
-import FooterSpace from "../components/FooterSpace";
-import ButtonNewReview from "../components/ButtonNewReview";
-import { Heading } from "../components/Typos";
-import { colors, metrics } from "../utils/themes";
+import React, {PureComponent} from 'react';
+import {Animated, FlatList, View, StatusBar, StyleSheet} from 'react-native';
+import zget from 'zget';
+import Header from '../components/Header';
+import Review from '../components/Review';
+import StarRating from '../components/StarRating';
+import FooterSpace from '../components/FooterSpace';
+import ButtonNewReview from '../components/ButtonNewReview';
+import {Heading} from '../components/Typos';
+import {colors, metrics} from '../utils/themes';
 
 const AnimatedFlatlist = Animated.createAnimatedComponent(FlatList);
 
@@ -19,13 +19,13 @@ class ReviewsScreen extends PureComponent {
   constructor(props) {
     super(props);
     this._contentOffset = new Animated.Value(0);
-    this._title = "Cảm nhận sách";
+    this._title = 'Cảm nhận sách';
   }
 
   componentDidMount() {
-    const { navigation } = this.props;
-    this._navListener = navigation.addListener("didFocus", () => {
-      StatusBar.setBarStyle("dark-content", true);
+    const {navigation} = this.props;
+    this._navListener = navigation.addListener('didFocus', () => {
+      StatusBar.setBarStyle('dark-content', true);
     });
   }
 
@@ -33,12 +33,12 @@ class ReviewsScreen extends PureComponent {
     this._navListener.remove();
   }
 
-  renderItem({ item }) {
+  renderItem({item}) {
     return <Review key={item.id} item={item} />;
   }
 
   render() {
-    const reviews = zget(this.props, "navigation.state.params.reviews") || [];
+    const reviews = zget(this.props, 'navigation.state.params.reviews') || [];
     return (
       <View style={styles.container}>
         <AnimatedFlatlist
@@ -59,10 +59,10 @@ class ReviewsScreen extends PureComponent {
           onScroll={Animated.event(
             [
               {
-                nativeEvent: { contentOffset: { y: this._contentOffset } }
-              }
+                nativeEvent: {contentOffset: {y: this._contentOffset}},
+              },
             ],
-            { useNativeDriver: true }
+            {useNativeDriver: true},
           )}
         />
         <Header
@@ -70,17 +70,17 @@ class ReviewsScreen extends PureComponent {
           title={this._title}
           rightButton={{
             onPress: () => null,
-            iconName: "edit"
+            iconName: 'edit',
           }}
           animatedY={this._contentOffset.interpolate({
             inputRange: [0, 70],
             outputRange: [60, 0],
-            extrapolate: "clamp"
+            extrapolate: 'clamp',
           })}
           animatedOpacity={this._contentOffset.interpolate({
             inputRange: [0, 70],
             outputRange: [0, 1],
-            extrapolate: "clamp"
+            extrapolate: 'clamp',
           })}
         />
       </View>
@@ -92,18 +92,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
-    paddingTop: metrics.headerHeight
+    paddingTop: metrics.headerHeight,
   },
   title: {
     paddingBottom: metrics.padding,
     marginBottom: metrics.padding,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: colors.divider
+    borderBottomColor: colors.divider,
   },
   list: {
-    justifyContent: "center",
-    padding: metrics.lessPadding
-  }
+    justifyContent: 'center',
+    padding: metrics.lessPadding,
+  },
 });
 
 export default ReviewsScreen;

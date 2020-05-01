@@ -1,11 +1,11 @@
-import * as React from "react";
-import { Platform, StyleSheet, View } from "react-native";
+import * as React from 'react';
+import {Platform, StyleSheet, View} from 'react-native';
 
 const FAR_FAR_AWAY = 3000; // this should be big enough to move the whole view out of its container
 
 export default class ResourceSavingScene extends React.Component {
   render() {
-    const { isVisible, children, style, ...rest } = this.props;
+    const {isVisible, children, style, ...rest} = this.props;
 
     return (
       <View
@@ -14,11 +14,10 @@ export default class ResourceSavingScene extends React.Component {
         removeClippedSubviews={
           // On iOS, set removeClippedSubviews to true only when not focused
           // This is an workaround for a bug where the clipped view never re-appears
-          Platform.OS === "ios" ? !isVisible : true
+          Platform.OS === 'ios' ? !isVisible : true
         }
-        pointerEvents={isVisible ? "auto" : "none"}
-        {...rest}
-      >
+        pointerEvents={isVisible ? 'auto' : 'none'}
+        {...rest}>
         <View style={isVisible ? styles.attached : styles.detached}>
           {children}
         </View>
@@ -30,13 +29,13 @@ export default class ResourceSavingScene extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    overflow: "hidden"
+    overflow: 'hidden',
   },
   attached: {
-    flex: 1
+    flex: 1,
   },
   detached: {
     flex: 1,
-    top: FAR_FAR_AWAY
-  }
+    top: FAR_FAR_AWAY,
+  },
 });

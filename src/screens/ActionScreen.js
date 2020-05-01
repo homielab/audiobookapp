@@ -3,11 +3,11 @@
  * @flow
  */
 
-import React, { PureComponent } from "react";
-import { View, PanResponder, Animated, StyleSheet } from "react-native";
-import Backdrop from "../components/Backdrop";
-import { Text } from "../components/Typos";
-import { colors, metrics } from "../utils/themes";
+import React, {PureComponent} from 'react';
+import {View, PanResponder, Animated, StyleSheet} from 'react-native';
+import Backdrop from '../components/Backdrop';
+import {Text} from '../components/Typos';
+import {colors, metrics} from '../utils/themes';
 
 const SWIPE_HEIGHT = 150;
 const INIT_OFFSET = 40;
@@ -18,7 +18,7 @@ class ActionScreen extends PureComponent {
     this.state = {
       visible: true,
       dragging: false,
-      offsetBottom: new Animated.Value(INIT_OFFSET)
+      offsetBottom: new Animated.Value(INIT_OFFSET),
     };
     this.onPanResponderGrant = this.onPanResponderGrant.bind(this);
     this.onPanResponderTerminate = this.onPanResponderTerminate.bind(this);
@@ -29,27 +29,27 @@ class ActionScreen extends PureComponent {
       onPanResponderGrant: this.onPanResponderGrant,
       onPanResponderMove: this.onPanResponderMove,
       onPanResponderRelease: this.onPanResponderRelease,
-      onPanResponderTerminate: this.onPanResponderTerminate
+      onPanResponderTerminate: this.onPanResponderTerminate,
     });
   }
 
   onPanResponderGrant() {
     this.setState({
-      dragging: true
+      dragging: true,
     });
   }
 
   onPanResponderTerminate() {
     this.setState({
       dragging: false,
-      offsetBottom: new Animated.Value(INIT_OFFSET)
+      offsetBottom: new Animated.Value(INIT_OFFSET),
     });
   }
 
   onPanResponderMove(evt, gestureState) {
     if (gestureState.dy > -INIT_OFFSET) {
       this.setState({
-        offsetBottom: new Animated.Value(gestureState.dy)
+        offsetBottom: new Animated.Value(gestureState.dy),
       });
     }
   }
@@ -58,25 +58,25 @@ class ActionScreen extends PureComponent {
     if (gestureState.dy > SWIPE_HEIGHT) {
       this.setState({
         visible: false,
-        dragging: false
+        dragging: false,
       });
     } else {
-      const { offsetBottom } = this.state;
+      const {offsetBottom} = this.state;
       Animated.timing(offsetBottom, {
         toValue: INIT_OFFSET,
         duration: 200,
-        useNativeDriver: true
+        useNativeDriver: true,
       }).start(() =>
         this.setState({
-          dragging: false
-        })
+          dragging: false,
+        }),
       );
     }
   }
 
   render() {
-    const { offsetBottom, dragging, visible } = this.state;
-    const { navigation } = this.props;
+    const {offsetBottom, dragging, visible} = this.state;
+    const {navigation} = this.props;
     return (
       <View style={styles.container}>
         <Backdrop onPress={() => navigation.goBack()} visible={visible} />
@@ -84,13 +84,12 @@ class ActionScreen extends PureComponent {
           style={[
             styles.sheetContainer,
             {
-              transform: [{ translateY: offsetBottom }]
-            }
+              transform: [{translateY: offsetBottom}],
+            },
           ]}
           ref={ref => (this.viewRef = ref)}
-          {...this._panResponder.panHandlers}
-        >
-          <View style={[styles.indicator, dragging && { opacity: 0.5 }]} />
+          {...this._panResponder.panHandlers}>
+          <View style={[styles.indicator, dragging && {opacity: 0.5}]} />
           <View style={styles.sheet}>
             <Text>Hello</Text>
           </View>
@@ -105,19 +104,19 @@ export default ActionScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "transparent"
+    backgroundColor: 'transparent',
   },
   sheetContainer: {
-    position: "absolute",
+    position: 'absolute',
     left: 0,
     right: 0,
     width: metrics.screenWidth,
     height: metrics.screenHeight,
     transform: [
       {
-        translateY: INIT_OFFSET
-      }
-    ]
+        translateY: INIT_OFFSET,
+      },
+    ],
   },
   indicator: {
     height: 6,
@@ -126,13 +125,13 @@ const styles = StyleSheet.create({
     borderRadius: metrics.radius,
     opacity: 0.8,
     marginBottom: metrics.lessPadding,
-    alignSelf: "center"
+    alignSelf: 'center',
   },
   sheet: {
     flex: 1,
     backgroundColor: colors.white,
     borderRadius: metrics.radius,
     padding: metrics.padding,
-    paddingBottom: metrics.padding - INIT_OFFSET
-  }
+    paddingBottom: metrics.padding - INIT_OFFSET,
+  },
 });

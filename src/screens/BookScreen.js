@@ -2,31 +2,31 @@
  * @format
  * @flow
  */
-import React, { PureComponent } from "react";
+import React, {PureComponent} from 'react';
 import {
   ScrollView,
   Animated,
   View,
   TouchableOpacity,
   StatusBar,
-  StyleSheet
-} from "react-native";
-import zget from "zget";
-import Feather from "react-native-vector-icons/Feather";
-import { connect } from "../recontext/store";
-import Header from "../components/Header";
-import BookCover from "../components/BookCover";
-import Category from "../components/Category";
-import StarRating from "../components/StarRating";
-import FooterSpace from "../components/FooterSpace";
-import Reviews from "../components/Reviews";
-import ButtonNewReview from "../components/ButtonNewReview";
-import { Title, Text, SubText, TextButton } from "../components/Typos";
-import { colors, metrics } from "../utils/themes";
-import ButtonPlay from "../components/ButtonPlay";
-import SectionHeader from "../components/SectionHeader";
-import PlayerControl from "../helpers/PlayerControl";
-import PLAYER_STATUS from "../utils/playerStatus";
+  StyleSheet,
+} from 'react-native';
+import zget from 'zget';
+import Feather from 'react-native-vector-icons/Feather';
+import {connect} from '../recontext/store';
+import Header from '../components/Header';
+import BookCover from '../components/BookCover';
+import Category from '../components/Category';
+import StarRating from '../components/StarRating';
+import FooterSpace from '../components/FooterSpace';
+import Reviews from '../components/Reviews';
+import ButtonNewReview from '../components/ButtonNewReview';
+import {Title, Text, SubText, TextButton} from '../components/Typos';
+import {colors, metrics} from '../utils/themes';
+import ButtonPlay from '../components/ButtonPlay';
+import SectionHeader from '../components/SectionHeader';
+import PlayerControl from '../helpers/PlayerControl';
+import PLAYER_STATUS from '../utils/playerStatus';
 
 class BookScreen extends PureComponent {
   constructor(props) {
@@ -34,14 +34,14 @@ class BookScreen extends PureComponent {
     this._contentOffset = new Animated.Value(0);
     this.play = this.play.bind(this);
     this.state = {
-      collapsed: true
+      collapsed: true,
     };
   }
 
   componentDidMount() {
-    const { navigation, player } = this.props;
-    this._navListener = navigation.addListener("didFocus", () => {
-      StatusBar.setBarStyle("dark-content", true);
+    const {navigation, player} = this.props;
+    this._navListener = navigation.addListener('didFocus', () => {
+      StatusBar.setBarStyle('dark-content', true);
     });
     if (!player.book) {
       this.play(0);
@@ -53,18 +53,18 @@ class BookScreen extends PureComponent {
   }
 
   play(trackIndex = 0) {
-    const item = zget(this.props, "navigation.state.params.item");
+    const item = zget(this.props, 'navigation.state.params.item');
     PlayerControl.load(item, trackIndex);
   }
 
   render() {
-    const { navigation, player } = this.props;
-    const { collapsed } = this.state;
+    const {navigation, player} = this.props;
+    const {collapsed} = this.state;
     const item = navigation.state.params.item;
 
     const isPlaying =
       player.status === PLAYER_STATUS.PLAYING &&
-      zget(player, "book.id") === item.id;
+      zget(player, 'book.id') === item.id;
 
     return (
       <View style={styles.container}>
@@ -76,19 +76,18 @@ class BookScreen extends PureComponent {
           onScroll={Animated.event(
             [
               {
-                nativeEvent: { contentOffset: { y: this._contentOffset } }
-              }
+                nativeEvent: {contentOffset: {y: this._contentOffset}},
+              },
             ],
-            { useNativeDriver: true }
-          )}
-        >
+            {useNativeDriver: true},
+          )}>
           <View style={styles.paddingLeft}>
             <BookCover imageSource={item.image} />
             <Title numberOfLines={3}>{item.title}</Title>
-            <Text>{item.authors.join(" ,")}</Text>
+            <Text>{item.authors.join(' ,')}</Text>
             <Category data={item.categories} />
             <View style={styles.line} />
-            <Text>Giọng Đọc: {item.readers.join(" ,")}</Text>
+            <Text>Giọng Đọc: {item.readers.join(' ,')}</Text>
             <StarRating rating={item.rating} />
             <ButtonPlay isPlaying={isPlaying} onPress={() => this.play(0)} />
           </View>
@@ -115,9 +114,8 @@ class BookScreen extends PureComponent {
             <View>
               <Text numberOfLines={3}>{item.description}</Text>
               <TextButton
-                style={{ fontSize: 14 }}
-                onPress={() => this.setState({ collapsed: false })}
-              >
+                style={{fontSize: 14}}
+                onPress={() => this.setState({collapsed: false})}>
                 Đọc tiếp
               </TextButton>
             </View>
@@ -127,9 +125,12 @@ class BookScreen extends PureComponent {
           <SectionHeader
             title="Cảm nhận"
             right={
-              <TextButton onPress={() => navigation.push("ReviewsScreen", {
-                reviews: item.reviews
-              })}>
+              <TextButton
+                onPress={() =>
+                  navigation.push('ReviewsScreen', {
+                    reviews: item.reviews,
+                  })
+                }>
                 Xem tất cả
               </TextButton>
             }
@@ -146,17 +147,17 @@ class BookScreen extends PureComponent {
           title={item.title}
           rightButton={{
             onPress: () => this.play(0),
-            iconName: "headphones"
+            iconName: 'headphones',
           }}
           animatedY={this._contentOffset.interpolate({
             inputRange: [0, 70],
             outputRange: [60, 0],
-            extrapolate: "clamp"
+            extrapolate: 'clamp',
           })}
           animatedOpacity={this._contentOffset.interpolate({
             inputRange: [0, 60, 70],
             outputRange: [0, 0.3, 1],
-            extrapolate: "clamp"
+            extrapolate: 'clamp',
           })}
         />
       </View>
@@ -165,7 +166,7 @@ class BookScreen extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  player: state.player
+  player: state.player,
 });
 
 export default connect(mapStateToProps)(BookScreen);
@@ -174,21 +175,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
-    paddingTop: metrics.headerHeight
+    paddingTop: metrics.headerHeight,
   },
   list: {
-    padding: metrics.lessPadding
+    padding: metrics.lessPadding,
   },
   paddingLeft: {
     paddingLeft: metrics.coverWidth + metrics.padding,
     paddingBottom: metrics.padding,
-    minHeight: metrics.coverHeight
+    minHeight: metrics.coverHeight,
   },
   chapter: {
     paddingTop: metrics.lessPadding,
-    flexDirection: "row"
+    flexDirection: 'row',
   },
   chapterIcon: {
-    marginHorizontal: metrics.lessPadding
-  }
+    marginHorizontal: metrics.lessPadding,
+  },
 });

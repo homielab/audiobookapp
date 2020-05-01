@@ -1,38 +1,38 @@
 export default [
   {
     id: '1',
-    image: require('./nha-gia-kim.jpg'),
-    title: 'Nhà giả Kim',
+    image: require('./the-alchemist.jpg'),
+    title: 'The Alchemist',
     authors: ['Paulo Coelho'],
-    categories: ['Văn học'],
-    readers: ['Trần Văn'],
+    categories: ['Novel', 'Drama', 'Fantasy'],
+    readers: ['audiobook.xyz'],
     description:
-      'Tất cả những trải nghiệm trong chuyến phiêu du theo đuổi vận mệnh của mình đã giúp Santiago thấu hiểu được ý nghĩa sâu xa nhất của hạnh phúc, hòa hợp với vũ trụ và con người. Tiểu thuyết Nhà giả kim của Paulo Coelho như một câu chuyện cổ tích giản dị, nhân ái, giàu chất thơ, thấm đẫm những minh triết huyền bí của phương Đông. Trong lần xuất bản đầu tiên tại Brazil vào năm 1988, sách chỉ bán được 900 bản. Nhưng, với số phận đặc biệt của cuốn sách dành cho toàn nhân loại, vượt ra ngoài biên giới quốc gia, Nhà giả kim đã làm rung động hàng triệu tâm hồn, trở thành một trong những cuốn sách bán chạy nhất mọi thời đại, và có thể làm thay đổi cuộc đời người đọc. "Nhưng nhà luyện kim đan không quan tâm mấy đến những điều ấy. Ông đã từng thấy nhiều người đến rồi đi, trong khi ốc đảo và sa mạc vẫn là ốc đảo và sa mạc. Ông đã thấy vua chúa và kẻ ăn xin đi qua biển cát này, cái biển cát thường xuyên thay hình đổi dạng vì gió thổi nhưng vẫn mãi mãi là biển cát mà ông đã biết từ thuở nhỏ. Tuy vậy, tự đáy lòng mình, ông không thể không cảm thấy vui trước hạnh phúc của mỗi người lữ khách, sau bao ngày chỉ có cát vàng với trời xanh nay được thấy chà là xanh tươi hiện ra trước mắt. ‘Có thể Thượng đế tạo ra sa mạc chỉ để cho con người biết quý trọng cây chà là" ông nghĩ. - Trích Nhà giả kim',
+      'The Alchemist is a novel by Brazilian author Paulo Coelho that was first published in 1988. Originally written in Portuguese, it became a widely translated international bestseller.',
     reviews: [
       {
         id: '123',
-        user: 'wong208',
+        user: 'audiobook.xyz',
         date: '26 Oct',
         rating: '3',
-        title: 'Rất hay',
+        title: 'Great',
         content:
-          'Cuốn này khá hay, câu chuyện lôi cuốn. kết thúc hơi cụt. Tôi hơi thất vọng về đoạn kết. tôi cứ hy vọng chàng trai sẽ có đoạn kết hạnh phúc bên 1 gia đình, bên người vợ là cô con gái ông mua lông cừu.',
+          'This book had a profound effect on me, however, of the negative variety. It did give me pointers on how to actually break out of my shell and "win friends" but in the long term, it did way more harm than good. Not the book per se, but my choice to follow the advice given there. The book basically tells you to be agreeable to everybody, find something to honestly like about them and compliment them on it, talk about their interests only and, practically, act like a people pleaser all the time.',
       },
       {
         id: '124',
-        user: 'wong208',
+        user: 'audiobook.xyz',
         date: '26 Oct',
         rating: '3',
-        title: 'Rất hay',
+        title: 'Awesome',
         content:
           'Cuốn này khá hay, câu chuyện lôi cuốn. kết thúc hơi cụt. Tôi hơi thất vọng về đoạn kết. tôi cứ hy vọng chàng trai sẽ có đoạn kết hạnh phúc bên 1 gia đình, bên người vợ là cô con gái ông mua lông cừu.',
       },
       {
         id: '125',
-        user: 'wong208',
+        user: 'audiobook.xyz',
         date: '26 Oct',
         rating: '3',
-        title: 'Rất hay',
+        title: 'Awesome',
         content:
           'Cuốn này khá hay, câu chuyện lôi cuốn. kết thúc hơi cụt. Tôi hơi thất vọng về đoạn kết. tôi cứ hy vọng chàng trai sẽ có đoạn kết hạnh phúc bên 1 gia đình, bên người vợ là cô con gái ông mua lông cừu.',
       },
@@ -73,38 +73,43 @@ export default [
   },
   {
     id: '2',
-    image: require('./Dac-nhan-tam.jpg'),
-    title: 'Đắc Nhân Tâm',
+    image: require('./how-to-win-friends.jpg'),
+    title: 'How to Win Friends and Influence People',
     authors: ['Dale Carnegie'],
-    categories: ['Văn học'],
-    readers: ['Ái Hoà', 'Xuân Khoa'],
-    description:
-      'When literature student Anastasia Steele goes to interview young entrepreneur Christian Grey, she encounters a man who is beautiful, brilliant, and intimidating. The unworldly, innocent Ana is startled to realize she wants this man and, despite his enigmatic reserve, finds she is desperate to get close to him. Unable to resist Ana’s quiet beauty, wit, and independent spirit, Grey admits he wants her, too—but on his own terms. Shocked yet thrilled by Grey’s singular erotic tastes, Ana hesitates. For all the trappings of success—his multinational businesses, his vast wealth, his loving family—Grey is a man tormented by demons and consumed by the need to control. When the couple embarks on a daring, passionately physical affair, Ana discovers Christian Grey’s secrets and explores her own dark desires. Erotic, amusing, and deeply moving, the Fifty Shades Trilogy is a tale that will obsess you, possess you, and stay with you forever.',
+    categories: ['Nonfiction', 'Self Help'],
+    readers: ['audiobook.xyz'],
+    description: `You can go after the job you want...and get it! You can take the job you have...and improve it! You can take any situation you're in...and make it work for you!
+
+Since its release in 1936, How to Win Friends and Influence People has sold more than 15 million copies. Dale Carnegie's first book is a timeless bestseller, packed with rock-solid advice that has carried thousands of now famous people up the ladder of success in their business and personal lives.
+      
+As relevant as ever before, Dale Carnegie's principles endure, and will help you achieve your maximum potential in the complex and competitive modern age.
+      
+Learn the six ways to make people like you, the twelve ways to win people to your way of thinking, and the nine ways to change people without arousing resentment.`,
     reviews: [
       {
         id: '123',
-        user: 'wong208',
+        user: 'audiobook.xyz',
         date: '26 Oct',
         rating: '3',
-        title: 'Rất hay',
+        title: 'Great',
         content:
-          'Cuốn này khá hay, câu chuyện lôi cuốn. kết thúc hơi cụt. Tôi hơi thất vọng về đoạn kết. tôi cứ hy vọng chàng trai sẽ có đoạn kết hạnh phúc bên 1 gia đình, bên người vợ là cô con gái ông mua lông cừu.',
+          'This book had a profound effect on me, however, of the negative variety. It did give me pointers on how to actually break out of my shell and "win friends" but in the long term, it did way more harm than good. Not the book per se, but my choice to follow the advice given there. The book basically tells you to be agreeable to everybody, find something to honestly like about them and compliment them on it, talk about their interests only and, practically, act like a people pleaser all the time.',
       },
       {
         id: '124',
-        user: 'wong208',
+        user: 'audiobook.xyz',
         date: '26 Oct',
         rating: '3',
-        title: 'Rất hay',
+        title: 'Awesome',
         content:
           'Cuốn này khá hay, câu chuyện lôi cuốn. kết thúc hơi cụt. Tôi hơi thất vọng về đoạn kết. tôi cứ hy vọng chàng trai sẽ có đoạn kết hạnh phúc bên 1 gia đình, bên người vợ là cô con gái ông mua lông cừu.',
       },
       {
         id: '125',
-        user: 'wong208',
+        user: 'audiobook.xyz',
         date: '26 Oct',
         rating: '3',
-        title: 'Rất hay',
+        title: 'Awesome',
         content:
           'Cuốn này khá hay, câu chuyện lôi cuốn. kết thúc hơi cụt. Tôi hơi thất vọng về đoạn kết. tôi cứ hy vọng chàng trai sẽ có đoạn kết hạnh phúc bên 1 gia đình, bên người vợ là cô con gái ông mua lông cừu.',
       },

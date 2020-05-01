@@ -2,8 +2,8 @@
  * @format
  * @flow
  */
-import React, { PureComponent } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import React, {PureComponent} from 'react';
+import {View, Text, StyleSheet} from 'react-native';
 
 class Template extends PureComponent {
   render() {
@@ -18,5 +18,5 @@ class Template extends PureComponent {
 export default Template;
 
 const styles = StyleSheet.create({
-  container: {}
+  container: {},
 });

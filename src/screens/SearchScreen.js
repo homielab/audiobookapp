@@ -2,7 +2,7 @@
  * @format
  * @flow
  */
-import React, { PureComponent } from "react";
+import React, {PureComponent} from 'react';
 import {
   View,
   TouchableOpacity,
@@ -12,22 +12,22 @@ import {
   TextInput,
   Keyboard,
   StatusBar,
-  StyleSheet
-} from "react-native";
-import Feather from "react-native-vector-icons/Feather";
-import { connect } from "../recontext/store";
-import AnimatedFlatList from "../components/AnimatedFlatList";
-import PrimaryHeader from "../components/PrimaryHeader";
-import { AnimatedTitle, Title, Subtitle } from "../components/Typos";
-import Api from "../helpers/Api";
-import { colors, metrics } from "../utils/themes";
+  StyleSheet,
+} from 'react-native';
+import Feather from 'react-native-vector-icons/Feather';
+import {connect} from '../recontext/store';
+import AnimatedFlatList from '../components/AnimatedFlatList';
+import PrimaryHeader from '../components/PrimaryHeader';
+import {AnimatedTitle, Title, Subtitle} from '../components/Typos';
+import Api from '../helpers/Api';
+import {colors, metrics} from '../utils/themes';
 
 class SearchScreen extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
       isFocused: false,
-      keyword: ""
+      keyword: '',
     };
     this._contentOffset = new Animated.Value(-metrics.headerHeight);
     this.onChangeText = this.onChangeText.bind(this);
@@ -37,9 +37,9 @@ class SearchScreen extends PureComponent {
   }
 
   componentDidMount() {
-    const { navigation } = this.props;
-    this._navListener = navigation.addListener("didFocus", () => {
-      StatusBar.setBarStyle("light-content", true);
+    const {navigation} = this.props;
+    this._navListener = navigation.addListener('didFocus', () => {
+      StatusBar.setBarStyle('light-content', true);
     });
     Api.loadCategories();
   }
@@ -50,41 +50,40 @@ class SearchScreen extends PureComponent {
 
   onChangeText(text) {
     this.setState({
-      keyword: text
+      keyword: text,
     });
   }
 
   onTextInputFocus() {
     this.setState({
-      isFocused: true
+      isFocused: true,
     });
     Animated.spring(this._contentOffset, {
-      toValue: -metrics.headerHeightX2
+      toValue: -metrics.headerHeightX2,
     }).start();
   }
 
   doClearKeywords() {
     this.setState({
-      keyword: "",
-      isFocused: false
+      keyword: '',
+      isFocused: false,
     });
     Keyboard.dismiss();
     Animated.spring(this._contentOffset, {
-      toValue: -metrics.headerHeight
+      toValue: -metrics.headerHeight,
     }).start();
   }
 
-  renderCategoryItem({ item }) {
-    const { navigation } = this.props;
+  renderCategoryItem({item}) {
+    const {navigation} = this.props;
     return (
       <TouchableOpacity
         key={item.key}
         onPress={() =>
-          navigation.push("CategoryScreen", {
-            category: item
+          navigation.push('CategoryScreen', {
+            category: item,
           })
-        }
-      >
+        }>
         <View style={styles.category}>
           <Title>{item.name}</Title>
         </View>
@@ -93,14 +92,14 @@ class SearchScreen extends PureComponent {
   }
 
   render() {
-    const { categories, search_books } = this.props;
-    const { keyword, isFocused } = this.state;
+    const {categories, search_books} = this.props;
+    const {keyword, isFocused} = this.state;
     const fadeOutAnimation = {
       opacity: this._contentOffset.interpolate({
         inputRange: [-metrics.headerHeightX2, -metrics.headerHeight],
         outputRange: [0, 1],
-        extrapolate: "clamp"
-      })
+        extrapolate: 'clamp',
+      }),
     };
 
     const switchPageAnimation = {
@@ -109,10 +108,10 @@ class SearchScreen extends PureComponent {
           translateY: this._contentOffset.interpolate({
             inputRange: [-metrics.headerHeightX2, -metrics.headerHeight],
             outputRange: [0, -metrics.screenHeight],
-            extrapolateRight: "clamp"
-          })
-        }
-      ]
+            extrapolateRight: 'clamp',
+          }),
+        },
+      ],
     };
 
     return (
@@ -120,7 +119,12 @@ class SearchScreen extends PureComponent {
         <View style={styles.container}>
           <Animated.View style={[styles.searchResult, switchPageAnimation]}>
             <View style={[styles.page, styles.result]}>
-              <Feather name="search" size={100} color={colors.black} style={styles.icon} />
+              <Feather
+                name="search"
+                size={100}
+                color={colors.black}
+                style={styles.icon}
+              />
               <Title>Tìm cuốn sách yêu thích</Title>
               <Text>Có thể tìm theo tên sách hoặc tên tác giả</Text>
             </View>
@@ -137,14 +141,20 @@ class SearchScreen extends PureComponent {
             animatedY={this._contentOffset.interpolate({
               inputRange: [-metrics.headerHeightX2, -metrics.headerHeight],
               outputRange: [-metrics.headerHeightX2, -metrics.headerHeight],
-              extrapolateRight: "clamp"
-            })}
-          >
+              extrapolateRight: 'clamp',
+            })}>
             <View style={styles.headerText}>
-              <AnimatedTitle style={[styles.textWhite, fadeOutAnimation]}>Tìm sách</AnimatedTitle>
+              <AnimatedTitle style={[styles.textWhite, fadeOutAnimation]}>
+                Tìm sách
+              </AnimatedTitle>
               <View style={styles.searchContainer}>
                 <View style={styles.search}>
-                  <Feather name="search" size={20} color={colors.textSecondary} style={styles.icon} />
+                  <Feather
+                    name="search"
+                    size={20}
+                    color={colors.textSecondary}
+                    style={styles.icon}
+                  />
                   <TextInput
                     autoCorrect={false}
                     placeholder="Nhập tên muốn tìm"
@@ -155,7 +165,9 @@ class SearchScreen extends PureComponent {
                   />
                 </View>
                 {isFocused ? (
-                  <TouchableOpacity onPress={this.doClearKeywords} style={styles.buttonClear}>
+                  <TouchableOpacity
+                    onPress={this.doClearKeywords}
+                    style={styles.buttonClear}>
                     <Subtitle style={styles.textWhite}>Hủy</Subtitle>
                   </TouchableOpacity>
                 ) : null}
@@ -169,7 +181,7 @@ class SearchScreen extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  categories: state.categories
+  categories: state.categories,
 });
 
 export default connect(mapStateToProps)(SearchScreen);
@@ -178,68 +190,68 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: metrics.statusBarHeight + metrics.padding,
     paddingHorizontal: metrics.padding,
-    backgroundColor: colors.white
+    backgroundColor: colors.white,
   },
   headerText: {
-    position: "absolute",
+    position: 'absolute',
     bottom: 0,
     width: metrics.screenWidth,
     paddingHorizontal: metrics.extraPadding,
-    paddingVertical: metrics.lessPadding
+    paddingVertical: metrics.lessPadding,
   },
   searchContainer: {
-    flexDirection: "row",
-    alignItems: "center"
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   search: {
     flex: 1,
-    flexDirection: "row",
+    flexDirection: 'row',
     borderRadius: metrics.radius,
     backgroundColor: colors.lightOpacity,
-    justifyContent: "center",
-    alignItems: "center"
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   icon: {
-    marginHorizontal: metrics.lessPadding
+    marginHorizontal: metrics.lessPadding,
   },
   textInput: {
     flex: 1,
     padding: 6,
-    color: colors.black
+    color: colors.black,
   },
   buttonClear: {
-    paddingHorizontal: metrics.lessPadding
+    paddingHorizontal: metrics.lessPadding,
   },
   searchResult: {
-    position: "absolute",
+    position: 'absolute',
     width: metrics.screenWidth,
     height: metrics.screenHeight * 2,
-    backgroundColor: colors.background
+    backgroundColor: colors.background,
   },
   page: {
     paddingTop: metrics.headerHeight,
     width: metrics.screenWidth,
-    height: metrics.screenHeight
+    height: metrics.screenHeight,
   },
   result: {
-    alignItems: "center"
+    alignItems: 'center',
   },
   categories: {
-    paddingTop: metrics.headerHeightX2 + metrics.padding
+    paddingTop: metrics.headerHeightX2 + metrics.padding,
   },
   category: {
     width: (metrics.screenWidth - metrics.lessPadding * 2) / 2,
     margin: metrics.lessPadding / 2,
     padding: metrics.lessPadding,
     backgroundColor: colors.white,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: metrics.radius
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: metrics.radius,
   },
   textWhite: {
-    color: colors.white
+    color: colors.white,
   },
   footerComponent: {
-    height: 100
-  }
+    height: 100,
+  },
 });

@@ -2,12 +2,12 @@
  * @format
  * @flow
  */
-import React, { PureComponent } from "react";
-import { Animated, View, TextInput, StyleSheet } from "react-native";
-import StarRating from "../components/StarRating";
-import { SubText } from "../components/Typos";
-import { colors, metrics } from "../utils/themes";
-import Header from "../components/Header";
+import React, {PureComponent} from 'react';
+import {Animated, View, TextInput, StyleSheet} from 'react-native';
+import StarRating from '../components/StarRating';
+import {SubText} from '../components/Typos';
+import {colors, metrics} from '../utils/themes';
+import Header from '../components/Header';
 
 class NewReviewScreen extends PureComponent {
   constructor(props) {
@@ -38,17 +38,17 @@ class NewReviewScreen extends PureComponent {
           animatedOpacity={this._contentOffset.interpolate({
             inputRange: [0, 60, 70],
             outputRange: [0, 0.3, 1],
-            extrapolate: "clamp"
+            extrapolate: 'clamp',
           })}
           animatedY={this._contentOffset.interpolate({
             inputRange: [0, 70],
             outputRange: [60, 0],
-            extrapolate: "clamp"
+            extrapolate: 'clamp',
           })}
           title="Viết cảm nhận"
           rightButton={{
             onPress: () => null,
-            iconName: "send"
+            iconName: 'send',
           }}
         />
       </View>
@@ -60,12 +60,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
-    paddingTop: metrics.headerHeight
+    paddingTop: metrics.headerHeight,
   },
   center: {
     marginTop: metrics.extraPadding,
-    justifyContent: "center",
-    alignItems: "center"
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   input: {
     backgroundColor: colors.background,
@@ -73,11 +73,11 @@ const styles = StyleSheet.create({
     borderRadius: metrics.radius,
     marginTop: metrics.padding,
     marginHorizontal: metrics.padding,
-    fontSize: 16
+    fontSize: 16,
   },
   multiline: {
-    height: 120
-  }
+    height: 120,
+  },
 });
 
 export default NewReviewScreen;

@@ -2,17 +2,24 @@
  * @format
  * @flow
  */
-import React, { PureComponent } from "react";
-import { ActivityIndicator, Animated, View, TouchableOpacity, PanResponder, StyleSheet } from "react-native";
-import Feather from "react-native-vector-icons/Feather";
-import zget from "zget";
-import { connect } from "../recontext/store";
-import AudioTimeBar from "./AudioTimeBar";
-import PlayerControl from "../helpers/PlayerControl";
-import { Title, Text } from "./Typos";
-import { colors, metrics } from "../utils/themes";
-import PLAYER_STATUS from "../utils/playerStatus";
-import seconds2time from "../utils/seconds2time";
+import React, {PureComponent} from 'react';
+import {
+  ActivityIndicator,
+  Animated,
+  View,
+  TouchableOpacity,
+  PanResponder,
+  StyleSheet,
+} from 'react-native';
+import Feather from 'react-native-vector-icons/Feather';
+import zget from 'zget';
+import {connect} from '../recontext/store';
+import AudioTimeBar from './AudioTimeBar';
+import PlayerControl from '../helpers/PlayerControl';
+import {Title, Text} from './Typos';
+import {colors, metrics} from '../utils/themes';
+import PLAYER_STATUS from '../utils/playerStatus';
+import seconds2time from '../utils/seconds2time';
 
 const SCREEN_HEIGHT = metrics.screenHeight;
 const SCREEN_WIDTH = metrics.screenWidth;
@@ -30,28 +37,31 @@ class Player extends PureComponent {
       onStartShouldSetPanResponder: () => true,
       onPanResponderMove: this.onPanResponderMove.bind(this),
       onPanResponderRelease: this.onPanResponderRelease.bind(this),
-      onPanResponderTerminate: this.onPanResponderRelease.bind(this)
+      onPanResponderTerminate: this.onPanResponderRelease.bind(this),
     });
     this.updateCurrentTime = this.updateCurrentTime.bind(this);
     this.showFullPlayer = this.showFullPlayer.bind(this);
     this._intervalTimer = null;
     this.state = {
-      currentTime: 0
+      currentTime: 0,
     };
   }
 
   componentDidMount() {}
 
   componentWillReceiveProps(nextProps) {
-    const currentVisible = zget(this.props, "player.visible");
-    const nextVisible = zget(nextProps, "player.visible");
+    const currentVisible = zget(this.props, 'player.visible');
+    const nextVisible = zget(nextProps, 'player.visible');
     if (!currentVisible && nextVisible) {
       this.showMiniPlayer();
     }
 
-    const currentStatus = zget(this.props, "player.status");
-    const nextStatus = zget(nextProps, "player.status");
-    if (!currentStatus !== PLAYER_STATUS.PLAYING && nextStatus === PLAYER_STATUS.PLAYING) {
+    const currentStatus = zget(this.props, 'player.status');
+    const nextStatus = zget(nextProps, 'player.status');
+    if (
+      !currentStatus !== PLAYER_STATUS.PLAYING &&
+      nextStatus === PLAYER_STATUS.PLAYING
+    ) {
       if (this._intervalTimer) {
         clearInterval(this._intervalTimer);
       }
@@ -60,9 +70,12 @@ class Player extends PureComponent {
       if (this._intervalTimer) {
         clearInterval(this._intervalTimer);
       }
-      if (nextStatus !== PLAYER_STATUS.PLAYING && nextStatus !== PLAYER_STATUS.PAUSE) {
+      if (
+        nextStatus !== PLAYER_STATUS.PLAYING &&
+        nextStatus !== PLAYER_STATUS.PAUSE
+      ) {
         this.setState({
-          currentTime: 0
+          currentTime: 0,
         });
       }
     }
@@ -76,13 +89,13 @@ class Player extends PureComponent {
     if (gestureState.dx > SCREEN_WIDTH / 2) {
       Animated.spring(this._deltaX, {
         toValue: SCREEN_WIDTH,
-        useNativeDriver: true
+        useNativeDriver: true,
       }).start();
       PlayerControl.unloadAudio();
     } else {
       Animated.spring(this._deltaX, {
         toValue: 0,
-        useNativeDriver: true
+        useNativeDriver: true,
       }).start();
     }
   }
@@ -90,7 +103,7 @@ class Player extends PureComponent {
   async updateCurrentTime() {
     const seconds = await PlayerControl.getCurrentTime();
     if (seconds) {
-      this.setState({ currentTime: seconds });
+      this.setState({currentTime: seconds});
     }
   }
 
@@ -100,7 +113,11 @@ class Player extends PureComponent {
 
   measureView(event) {
     this._playerHeight = event.nativeEvent.layout.height;
-    this._playerY = SCREEN_HEIGHT - TABBAR_HEIGHT - this._playerHeight - metrics.bottomSpaceHeight;
+    this._playerY =
+      SCREEN_HEIGHT -
+      TABBAR_HEIGHT -
+      this._playerHeight -
+      metrics.bottomSpaceHeight;
     this._deltaY.setValue(this._playerY);
   }
 
@@ -108,7 +125,7 @@ class Player extends PureComponent {
     Animated.spring(this._deltaX, {
       toValue: 0,
       delay: 1000,
-      useNativeDriver: true
+      useNativeDriver: true,
     }).start();
   }
 
@@ -142,8 +159,8 @@ class Player extends PureComponent {
   }
 
   renderControls() {
-    const { player } = this.props;
-    const { currentTime } = this.state;
+    const {player} = this.props;
+    const {currentTime} = this.state;
     const status = player.status;
 
     return (
@@ -157,8 +174,8 @@ class Player extends PureComponent {
   }
 
   render() {
-    const { player } = this.props;
-    const { currentTime } = this.state;
+    const {player} = this.props;
+    const {currentTime} = this.state;
     const book = player.book || {};
     player.duration = 100;
     const timePercent = player.duration ? currentTime / player.duration : 0;
@@ -173,22 +190,21 @@ class Player extends PureComponent {
             opacity: this._deltaX.interpolate({
               inputRange: [0, SCREEN_WIDTH],
               outputRange: [MAX_PLAYER_OPACITY, 0],
-              extrapolateRight: "clamp"
+              extrapolateRight: 'clamp',
             }),
             transform: [
-              { translateY: this._deltaY },
+              {translateY: this._deltaY},
               {
-                translateX: this._deltaX
-              }
-            ]
-          }
-        ]}
-      >
+                translateX: this._deltaX,
+              },
+            ],
+          },
+        ]}>
         <AudioTimeBar percent={timePercent} />
         <View style={styles.row}>
           <Animated.View style={styles.info}>
             <Title numberOfLines={1}>{book.title} </Title>
-            <Text numberOfLines={1}>{zget(player, "track.title")} </Text>
+            <Text numberOfLines={1}>{zget(player, 'track.title')} </Text>
           </Animated.View>
           {player.duration ? this.renderControls() : this.renderLoading()}
         </View>
@@ -198,43 +214,43 @@ class Player extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  player: state.player
+  player: state.player,
 });
 
 export default connect(mapStateToProps)(Player);
 
 const styles = StyleSheet.create({
   player: {
-    position: "absolute",
+    position: 'absolute',
     width: metrics.screenWidth,
     backgroundColor: colors.white,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: colors.darkOpacity,
-    minHeight: 70
+    minHeight: 70,
     // borderTopRightRadius: metrics.radius,
     // borderTopLeftRadius: metrics.radius
   },
   row: {
-    flexDirection: "row"
+    flexDirection: 'row',
   },
   info: {
-    position: "absolute",
+    position: 'absolute',
     left: metrics.padding,
     top: metrics.padding,
-    width: metrics.screenWidth - metrics.padding * 2 - 150
+    width: metrics.screenWidth - metrics.padding * 2 - 150,
   },
   controls: {
-    position: "absolute",
+    position: 'absolute',
     right: metrics.padding,
-    top: metrics.padding
+    top: metrics.padding,
     // width: 150
   },
   button: {
-    paddingHorizontal: metrics.lessPadding
+    paddingHorizontal: metrics.lessPadding,
   },
   loading: {
-    justifyContent: "center",
-    alignItems: "center",
-    width: 150
-  }
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 150,
+  },
 });

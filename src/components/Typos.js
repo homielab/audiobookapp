@@ -2,18 +2,18 @@
  * @format
  * @flow
  */
-import React, { PureComponent } from "react";
+import React, {PureComponent} from 'react';
 import {
   Text as RNText,
   TouchableOpacity,
   Animated,
-  StyleSheet
-} from "react-native";
-import { colors } from "../utils/themes";
+  StyleSheet,
+} from 'react-native';
+import {colors} from '../utils/themes';
 
 class AnimatedHeading extends PureComponent {
   render() {
-    const { style } = this.props;
+    const {style} = this.props;
     return (
       <Animated.Text {...this.props} style={[styles.animatedHeading, style]} />
     );
@@ -96,50 +96,50 @@ export {
   Text,
   TextButton,
   SubText,
-  Caption
+  Caption,
 };
 
 const styles = StyleSheet.create({
   animatedHeading: {
     fontSize: 24,
-    fontWeight: "bold",
-    color: colors.text
+    fontWeight: 'bold',
+    color: colors.text,
   },
   heading: {
     fontSize: 24,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     color: colors.text,
-    paddingBottom: 3
+    paddingBottom: 3,
   },
   title: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     color: colors.text,
-    paddingBottom: 3
+    paddingBottom: 3,
   },
   subtitle: {
     fontSize: 18,
-    fontWeight: "bold",
-    color: colors.text
+    fontWeight: 'bold',
+    color: colors.text,
   },
   textButton: {
     fontSize: 18,
-    fontWeight: "normal",
-    color: colors.primary
+    fontWeight: 'normal',
+    color: colors.primary,
   },
   text: {
     fontSize: 16,
-    fontWeight: "normal",
-    color: colors.text
+    fontWeight: 'normal',
+    color: colors.text,
   },
   subText: {
     fontSize: 13,
-    fontWeight: "normal",
-    color: colors.textSecondary
+    fontWeight: 'normal',
+    color: colors.textSecondary,
   },
   caption: {
     fontSize: 10,
-    fontWeight: "normal",
-    color: colors.textSecondary
-  }
+    fontWeight: 'normal',
+    color: colors.textSecondary,
+  },
 });

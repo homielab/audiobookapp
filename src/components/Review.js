@@ -2,26 +2,25 @@
  * @format
  * @flow
  */
-import React, { PureComponent } from "react";
-import { View, StyleSheet } from "react-native";
-import PropTypes from "prop-types";
-import StarRating from "./StarRating";
-import { Subtitle, Text, SubText } from "./Typos";
-import { colors, metrics } from "../utils/themes";
+import React, {PureComponent} from 'react';
+import {View, StyleSheet} from 'react-native';
+import PropTypes from 'prop-types';
+import StarRating from './StarRating';
+import {Subtitle, Text, SubText} from './Typos';
+import {colors, metrics} from '../utils/themes';
 
 class Review extends PureComponent {
   render() {
-    const { width, height } = this.props;
+    const {width, height} = this.props;
     return (
       <View
         style={[
           styles.container,
           width && {
-            width: width
+            width: width,
           },
-          height && { height: height }
-        ]}
-      >
+          height && {height: height},
+        ]}>
         <Subtitle>Hài Lòng</Subtitle>
         <StarRating mini rating={3.4} />
         <Text>
@@ -40,12 +39,12 @@ class Review extends PureComponent {
 
 Review.propTypes = {
   width: PropTypes.number,
-  height: PropTypes.number
+  height: PropTypes.number,
 };
 
 Review.defaultProps = {
   width: null,
-  height: null
+  height: null,
 };
 
 export default Review;
@@ -55,11 +54,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
     padding: metrics.padding,
     marginBottom: metrics.padding,
-    borderRadius: metrics.radius
+    borderRadius: metrics.radius,
   },
   author: {
-    position: "absolute",
+    position: 'absolute',
     right: metrics.padding,
-    top: metrics.padding
-  }
+    top: metrics.padding,
+  },
 });

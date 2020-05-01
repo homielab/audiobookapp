@@ -2,13 +2,13 @@
  * @format
  * @flow
  */
-import React, { PureComponent } from "react";
-import { FlatList } from "react-native";
-import Review from "./Review";
-import { metrics } from "../utils/themes";
+import React, {PureComponent} from 'react';
+import {FlatList} from 'react-native';
+import Review from './Review';
+import {metrics} from '../utils/themes';
 
 class Reviews extends PureComponent {
-  renderItem({ item }) {
+  renderItem({item}) {
     return (
       <Review
         key={item.id}
@@ -20,7 +20,7 @@ class Reviews extends PureComponent {
   }
 
   render() {
-    const { reviews } = this.props;
+    const {reviews} = this.props;
     return (
       <FlatList
         horizontal

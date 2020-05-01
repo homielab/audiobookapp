@@ -3,60 +3,60 @@
  * @flow
  */
 
-import PLAYER_STATUS from "../../utils/playerStatus";
+import PLAYER_STATUS from '../../utils/playerStatus';
 
 export default {
-  loadAudio: (state, { book, track }) => ({
+  loadAudio: (state, {book, track}) => ({
     player: {
       visible: true,
       status: PLAYER_STATUS.LOADING,
       book,
       duration: null,
-      track
-    }
+      track,
+    },
   }),
 
   loadAudioError: state => ({
     player: {
       ...state.player,
-      status: PLAYER_STATUS.ERROR
-    }
+      status: PLAYER_STATUS.ERROR,
+    },
   }),
 
-  playAudio: (state, { duration }) => ({
+  playAudio: (state, {duration}) => ({
     player: {
       ...state.player,
       duration,
-      status: PLAYER_STATUS.PLAYING
-    }
+      status: PLAYER_STATUS.PLAYING,
+    },
   }),
 
   pauseAudio: state => ({
     player: {
       ...state.player,
-      status: PLAYER_STATUS.PAUSE
-    }
+      status: PLAYER_STATUS.PAUSE,
+    },
   }),
 
   playAudioEnded: state => ({
     player: {
       ...state.player,
-      status: PLAYER_STATUS.STOP
-    }
+      status: PLAYER_STATUS.STOP,
+    },
   }),
 
   showPlayer: state => ({
     player: {
       ...state.player,
-      visible: true
-    }
+      visible: true,
+    },
   }),
 
   hidePlayer: state => ({
     player: {
       ...state.player,
-      visible: false
-    }
+      visible: false,
+    },
   }),
 
   unloadAudio: () => ({
@@ -65,7 +65,7 @@ export default {
       status: false,
       book: null,
       duration: null,
-      track: null
-    }
-  })
+      track: null,
+    },
+  }),
 };

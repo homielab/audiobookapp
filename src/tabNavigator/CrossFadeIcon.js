@@ -1,5 +1,5 @@
-import React from "react";
-import { Animated, View, StyleSheet } from "react-native";
+import React from 'react';
+import {Animated, View, StyleSheet} from 'react-native';
 
 export default class TabBarIcon extends React.Component {
   render() {
@@ -10,25 +10,25 @@ export default class TabBarIcon extends React.Component {
       activeTintColor,
       inactiveTintColor,
       renderIcon,
-      style
+      style,
     } = this.props;
 
     // We render the icon twice at the same position on top of each other:
     // active and inactive one, so we can fade between them.
     return (
       <View style={style}>
-        <Animated.View style={[styles.icon, { opacity: activeOpacity }]}>
+        <Animated.View style={[styles.icon, {opacity: activeOpacity}]}>
           {renderIcon({
             route,
             focused: true,
-            tintColor: activeTintColor
+            tintColor: activeTintColor,
           })}
         </Animated.View>
-        <Animated.View style={[styles.icon, { opacity: inactiveOpacity }]}>
+        <Animated.View style={[styles.icon, {opacity: inactiveOpacity}]}>
           {renderIcon({
             route,
             focused: false,
-            tintColor: inactiveTintColor
+            tintColor: inactiveTintColor,
           })}
         </Animated.View>
       </View>
@@ -41,13 +41,13 @@ const styles = StyleSheet.create({
     // We render the icon twice at the same position on top of each other:
     // active and inactive one, so we can fade between them:
     // Cover the whole iconContainer:
-    position: "absolute",
-    alignSelf: "center",
-    alignItems: "center",
-    justifyContent: "center",
-    height: "100%",
-    width: "100%",
+    position: 'absolute',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100%',
+    width: '100%',
     // Workaround for react-native >= 0.54 layout bug
-    minWidth: 25
-  }
+    minWidth: 25,
+  },
 });

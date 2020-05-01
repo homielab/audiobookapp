@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // create Context Provider to wrap root Component
 const createProvider = (setProvider, Provider, initialState) =>
@@ -28,7 +28,7 @@ const createConnect = Consumer => mapStateToProps => ComponentToWrap => {
   };
 
   const displayName =
-    ComponentToWrap.displayName || ComponentToWrap.name || "NoName";
+    ComponentToWrap.displayName || ComponentToWrap.name || 'NoName';
   ConnectedComponent.displayName = `Consumer(${displayName})`;
 
   return ConnectedComponent;
@@ -46,39 +46,39 @@ export default (initialState, actionsCreators = {}, logger = false) => {
       ...accumulator,
       [currentAction]: (...args) => {
         const update = actionsCreators[currentAction](state, ...args);
-        const nextState = { ...state, ...update };
+        const nextState = {...state, ...update};
         if (logger) {
-          let params = "nothing";
+          let params = 'nothing';
           if (args) {
             if (args.length === 1) params = args[0];
             else if (args.length > 1) params = args;
           }
           console.log(
-            "---> ACTION: %c" + currentAction,
-            `color: #000000; font-weight: bold`
+            '---> ACTION: %c' + currentAction,
+            `color: #000000; font-weight: bold`,
           );
           console.log(
-            "  %cprev state ",
+            '  %cprev state ',
             `color: #C0C0C0; font-weight: bold`,
-            state
+            state,
           );
           console.log(
-            "  %cparams     ",
+            '  %cparams     ',
             `color: #0000FF; font-weight: bold`,
-            params
+            params,
           );
           console.log(
-            "  %cnext state ",
+            '  %cnext state ',
             `color: #008000; font-weight: bold`,
-            nextState
+            nextState,
           );
         }
 
         state = nextState;
         provider.setState(nextState);
-      }
+      },
     }),
-    {}
+    {},
   );
 
   const Provider = createProvider(setProvider, context.Provider, initialState);
@@ -87,6 +87,6 @@ export default (initialState, actionsCreators = {}, logger = false) => {
   return {
     Provider,
     connect,
-    actions
+    actions,
   };
 };
