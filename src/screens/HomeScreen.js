@@ -12,7 +12,7 @@ import CardBook from '../components/CardBook';
 import {colors, metrics} from '../utils/themes';
 import Api from '../helpers/Api';
 
-const pickRandomProperty = obj => {
+const pickRandomProperty = (obj) => {
   var result;
   var count = 0;
   for (var prop in obj) {
@@ -114,7 +114,7 @@ class HomeScreen extends PureComponent {
       <View style={styles.container}>
         <AnimatedFlatList
           data={books}
-          keyExtractor={item => item.id}
+          keyExtractor={(item, index) => index.toString()}
           ListHeaderComponent={<View style={styles.headerComponent} />}
           renderItem={({item, index}) => (
             <CardBook
@@ -164,7 +164,7 @@ class HomeScreen extends PureComponent {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   books: state.books,
   quotes: state.quotes,
 });

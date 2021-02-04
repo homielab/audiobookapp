@@ -134,7 +134,7 @@ class SearchScreen extends PureComponent {
               <AnimatedFlatList
                 data={categories}
                 numColumns={2}
-                keyExtractor={item => item.key}
+                keyExtractor={(item) => item.key}
                 renderItem={this.renderCategoryItem}
               />
             </View>
@@ -182,7 +182,7 @@ class SearchScreen extends PureComponent {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   categories: state.categories,
 });
 

@@ -165,7 +165,7 @@ class BookScreen extends PureComponent {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   player: state.player,
 });
 

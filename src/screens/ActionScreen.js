@@ -87,7 +87,7 @@ class ActionScreen extends PureComponent {
               transform: [{translateY: offsetBottom}],
             },
           ]}
-          ref={ref => (this.viewRef = ref)}
+          ref={(ref) => (this.viewRef = ref)}
           {...this._panResponder.panHandlers}>
           <View style={[styles.indicator, dragging && {opacity: 0.5}]} />
           <View style={styles.sheet}>

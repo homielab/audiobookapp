@@ -20,7 +20,7 @@ class AnimatedHeading extends PureComponent {
   }
 }
 
-const AnimatedTitle = props => (
+const AnimatedTitle = (props) => (
   <Animated.Text {...props} style={[styles.heading, props.style]} />
 );
 

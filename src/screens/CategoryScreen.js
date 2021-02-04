@@ -43,7 +43,7 @@ class CategoryScreen extends PureComponent {
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
           data={search_books}
-          keyExtractor={item => item.id}
+          keyExtractor={(item) => item.id}
           contentContainerStyle={styles.list}
           ListHeaderComponent={
             <View style={styles.title}>
@@ -92,7 +92,7 @@ class CategoryScreen extends PureComponent {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   search_books: state.search_books,
 });
 

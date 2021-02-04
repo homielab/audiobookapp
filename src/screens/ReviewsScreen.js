@@ -46,7 +46,7 @@ class ReviewsScreen extends PureComponent {
           showsVerticalScrollIndicator={false}
           data={reviews}
           renderItem={this.renderItem}
-          keyExtractor={item => item.id}
+          keyExtractor={(item) => item.id}
           contentContainerStyle={styles.list}
           ListHeaderComponent={
             <View style={styles.title}>

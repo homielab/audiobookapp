@@ -12,9 +12,7 @@ const statusBarHeight = Platform.select({
   ios: isIphoneXGen ? 44 : 24,
   android: StatusBar.currentHeight,
 });
-const headerHeight = isIphoneXGen
-  ? 130 - statusBarHeight
-  : 84 - statusBarHeight;
+const headerHeight = isIphoneXGen ? 130 - statusBarHeight : 84;
 
 const metrics = {
   padding: 15,

@@ -23,6 +23,12 @@ Audiobook mobile application accomplished with React Native and React ecosystem,
 
 Feel free to create new issue: https://github.com/minhtc/audiobookapp/issues
 
+### Production Version
+
+- Web: [https://audiobook.xyz](https://audiobook.xyz)
+- Android App: [https://play.google.com/store/apps/details?id=app.sachnoi](https://play.google.com/store/apps/details?id=app.sachnoi)
+- iOS App: [https://apps.apple.com/us/app/id1453643910](https://apps.apple.com/us/app/id1453643910)
+
 ### Preview
 
 <center><a href="http://www.youtube.com/watch?feature=player_embedded&v=GT63VkgRins" target="_blank"><img src="http://img.youtube.com/vi/GT63VkgRins/0.jpg" alt="audiobook app react-native demo" width="480" height="360" border="10" /></a></center>

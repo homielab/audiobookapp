@@ -2,7 +2,7 @@
  * @format
  * @flow
  */
-export default totalSeconds => {
+export default (totalSeconds) => {
   let hours = Math.floor(totalSeconds / 3600),
     minutes = Math.floor((totalSeconds - hours * 3600) / 60),
     seconds = totalSeconds - hours * 3600 - minutes * 60,

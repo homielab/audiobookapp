@@ -3,12 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "author": {
-    "name": "minhtc",
+    "name": "ron",
     "url": "https://audiobook.xyz"
   },
   "keywords": [
     "react",
-    "react-native"
+    "react-native",
+    "audiobook",
+    "audiobook-app"
   ],
   "scripts": {
     "android": "react-native run-android",
@@ -18,25 +20,24 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "react": "16.11.0",
-    "react-native": "0.62.2",
-    "react-native-gesture-handler": "^1.6.1",
-    "react-native-screens": "^2.7.0",
+    "react": "16.13.1",
+    "react-native": "0.63.4",
+    "react-native-gesture-handler": "^1.9.0",
     "react-native-sound": "^0.11.0",
-    "react-native-vector-icons": "^6.6.0",
+    "react-native-vector-icons": "^8.0.0",
     "react-navigation": "^3.13.0",
     "react-recontext": "^2.0.6",
     "zget": "^1.0.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/runtime": "^7.6.2",
-    "@react-native-community/eslint-config": "^0.0.5",
-    "babel-jest": "^24.9.0",
+    "@babel/core": "^7.8.4",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^1.1.0",
+    "babel-jest": "^25.1.0",
     "eslint": "^6.5.1",
-    "jest": "^24.9.0",
-    "metro-react-native-babel-preset": "^0.58.0",
-    "react-test-renderer": "16.11.0"
+    "jest": "^25.1.0",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "react-test-renderer": "16.13.1"
   },
   "jest": {
     "preset": "react-native"
