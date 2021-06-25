@@ -27,7 +27,7 @@ Feel free to create new issue: https://github.com/minhtc/audiobookapp/issues
 
 The UX/UI is rewritten completely, but the core logic is the same.
 
-- Web: [https://audiobook.xyz](https://audiobook.xyz)
+- Web: [https://audioaz.com/?utm_source=github&utm_medium=github&utm_campaign=github](https://audioaz.com?utm_source=github)
 - Android App: [https://play.google.com/store/apps/details?id=app.sachnoi](https://play.google.com/store/apps/details?id=app.sachnoi)
 - iOS App: [https://apps.apple.com/us/app/id1453643910](https://apps.apple.com/us/app/id1453643910)
 
