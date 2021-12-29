@@ -2,7 +2,7 @@
  * @format
  * @flow
  */
-import createStore from 'react-recontext';
+import createStore from '@homielab/react-recontext';
 import initialState from './initialState';
 import actionsCreators from './actions/index';
 
