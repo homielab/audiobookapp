@@ -26,7 +26,7 @@
     "react-native-sound": "^0.11.0",
     "react-native-vector-icons": "^8.0.0",
     "react-navigation": "^3.13.0",
-    "react-recontext": "^2.0.6",
+    "@homielab/react-recontext": "*",
     "zget": "^1.0.4"
   },
   "devDependencies": {
