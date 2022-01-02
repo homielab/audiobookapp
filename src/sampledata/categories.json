@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Art",
+    "key": "Art"
+  },
+  {
+    "name": "Biography",
+    "key": "Biography"
+  },
+  {
+    "name": "Business",
+    "key": "Business"
+  },
+  {
+    "name": "Children's",
+    "key": "Children's"
+  },
+  {
+    "name": "Christian",
+    "key": "Christian"
+  },
+  {
+    "name": "Classics",
+    "key": "Classics"
+  },
+  {
+    "name": "Comics",
+    "key": "Comics"
+  },
+  {
+    "name": "Cookbooks",
+    "key": "Cookbooks"
+  },
+  {
+    "name": "Ebooks",
+    "key": "Ebooks"
+  },
+  {
+    "name": "Fantasy",
+    "key": "Fantasy"
+  },
+  {
+    "name": "Fiction",
+    "key": "Fiction"
+  },
+  {
+    "name": "Graphic Novels",
+    "key": "Graphic Novels"
+  },
+  {
+    "name": "Historical Fiction",
+    "key": "Historical Fiction"
+  },
+  {
+    "name": "History",
+    "key": "History"
+  },
+  {
+    "name": "Horror",
+    "key": "Horror"
+  },
+  {
+    "name": "Memoir",
+    "key": "Memoir"
+  },
+  {
+    "name": "Music",
+    "key": "Music"
+  },
+  {
+    "name": "Mystery",
+    "key": "Mystery"
+  },
+  {
+    "name": "Nonfiction",
+    "key": "Nonfiction"
+  },
+  {
+    "name": "Poetry",
+    "key": "Poetry"
+  },
+  {
+    "name": "Psychology",
+    "key": "Psychology"
+  },
+  {
+    "name": "Romance",
+    "key": "Romance"
+  },
+  {
+    "name": "Science",
+    "key": "Science"
+  },
+  {
+    "name": "Science Fiction",
+    "key": "Science Fiction"
+  },
+  {
+    "name": "Self Help",
+    "key": "Self Help"
+  },
+  {
+    "name": "Sports",
+    "key": "Sports"
+  },
+  {
+    "name": "Thriller",
+    "key": "Thriller"
+  },
+  {
+    "name": "Travel",
+    "key": "Travel"
+  },
+  {
+    "name": "Young Adult",
+    "key": "Young Adult"
+  },
+  {
+    "name": "More Genres",
+    "key": "More Genres"
+  },
+  {
+    "key": "van-hoc",
+    "name": "Văn học"
+  },
+  {
+    "key": "thieu-nhi",
+    "name": "Thiếu nhi"
+  },
+  {
+    "name": "Kinh tế",
+    "key": "kinh-te"
+  },
+  {
+    "name": "Nuôi dạy con",
+    "key": "nuoi-day-con"
+  },
+  {
+    "name": "Kỹ năng",
+    "key": "ky-nang"
+  },
+  {
+    "name": "Ngoại ngữ",
+    "key": "ngoai-ngu"
+  },
+  {
+    "name": "Lịch sử",
+    "key": "lich-su"
+  },
+  {
+    "name": "Khoa học",
+    "key": "khoa-hoc"
+  },
+  {
+    "name": "Tôn giáo",
+    "key": "ton-giao-tam-linh"
+  },
+  {
+    "name": "Văn hoá",
+    "key": "van-hoa-du-lich"
+  },
+  {
+    "name": "Nghệ thuật",
+    "key": "nghe-thuat"
+  },
+  {
+    "name": "Người lớn",
+    "key": "truyen-nguoi-lon"
+  }
+]
