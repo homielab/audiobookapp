@@ -21,7 +21,7 @@
     "react-native-screens": "^3.10.1",
     "react-native-sound": "^0.11.0",
     "react-native-vector-icons": "^9.0.0",
-    "react-recontext": "^0.0.1"
+    "react-recontext": "^0.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
