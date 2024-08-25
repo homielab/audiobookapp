@@ -54,7 +54,7 @@ const TabbarStack = () => {
         name="SearchNav"
         component={SearchNavigator}
         options={{
-          tabBarLabel: 'Seach',
+          tabBarLabel: 'Search',
           tabBarIcon: ({color, size}) => (
             <MaterialIcons name="search" color={color} size={size} />
           ),
