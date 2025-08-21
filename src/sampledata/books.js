@@ -41,27 +41,27 @@ export default [
     tracks: [
       {
         title: 'The Alchemist - Introduction',
-        link: 'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
+        link: 'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3?chapter=1',
       },
       {
         title: 'The Alchemist - Chapter 1',
-        link: 'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
+        link: 'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3?chapter=2',
       },
       {
         title: 'The Alchemist - Chapter 2',
-        link: 'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
+        link: 'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3?chapter=3',
       },
       {
         title: 'The Alchemist - Chapter 3',
-        link: 'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
+        link: 'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3?chapter=4',
       },
       {
         title: 'The Alchemist - Chapter 4',
-        link: 'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
+        link: 'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3?chapter=5',
       },
       {
         title: 'The Alchemist - Chapter 5',
-        link: 'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
+        link: 'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3?chapter=6',
       },
     ],
   },
@@ -146,6 +146,12 @@ Learn the six ways to make people like you, the twelve ways to win people to you
     description:
       'When literature student Anastasia Steele goes to interview young entrepreneur Christian Grey, she encounters a man who is beautiful, brilliant, and intimidating. The unworldly, innocent Ana is startled to realize she wants this man and, despite his enigmatic reserve, finds she is desperate to get close to him. Unable to resist Ana’s quiet beauty, wit, and independent spirit, Grey admits he wants her, too—but on his own terms. Shocked yet thrilled by Grey’s singular erotic tastes, Ana hesitates. For all the trappings of success—his multinational businesses, his vast wealth, his loving family—Grey is a man tormented by demons and consumed by the need to control. When the couple embarks on a daring, passionately physical affair, Ana discovers Christian Grey’s secrets and explores her own dark desires. Erotic, amusing, and deeply moving, the Fifty Shades Trilogy is a tale that will obsess you, possess you, and stay with you forever.',
     rating: 3.6,
+    tracks: [
+      {
+        title: 'Test Track',
+        link: 'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
+      },
+    ],
   },
   {
     id: '4',
@@ -154,7 +160,15 @@ Learn the six ways to make people like you, the twelve ways to win people to you
     authors: ['Nicholas Sparks'],
     categories: ['Văn học'],
     readers: ['Trần Văn'],
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     rating: 5,
+    tracks: [
+      {
+        title: 'Test Track',
+        link: 'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
+      },
+    ],
   },
   {
     id: '5',
@@ -163,7 +177,15 @@ Learn the six ways to make people like you, the twelve ways to win people to you
     authors: ['Nguyễn Hàng Tình'],
     categories: ['Văn học'],
     readers: ['Trần Văn'],
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     rating: 1,
+    tracks: [
+      {
+        title: 'Test Track',
+        link: 'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
+      },
+    ],
   },
   {
     id: '6',
@@ -172,6 +194,14 @@ Learn the six ways to make people like you, the twelve ways to win people to you
     authors: ['Lê Xuân Khoa'],
     categories: ['Văn học'],
     readers: ['Trần Văn'],
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     rating: 0,
+    tracks: [
+      {
+        title: 'Test Track',
+        link: 'https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3',
+      },
+    ],
   },
-];
+]
